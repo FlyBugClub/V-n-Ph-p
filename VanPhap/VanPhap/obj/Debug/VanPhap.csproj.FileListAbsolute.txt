@@ -1,0 +1,11 @@
+E:\Projects\Vân Pháp\VanPhap\VanPhap\bin\Debug\VanPhap.exe.config
+E:\Projects\Vân Pháp\VanPhap\VanPhap\bin\Debug\VanPhap.exe
+E:\Projects\Vân Pháp\VanPhap\VanPhap\bin\Debug\VanPhap.pdb
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.AssemblyReference.cache
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.SuggestedBindingRedirects.cache
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.Properties.Resources.resources
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.GenerateResource.cache
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CoreCompileInputs.cache
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.exe
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.Form_SoCauAn.resources
