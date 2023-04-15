@@ -56,5 +56,5 @@ namespace VanPhap
         {
             Application.Exit();
         }
-    }
+    } 
 }

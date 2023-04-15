@@ -16,5 +16,25 @@ namespace VanPhap
         {
             InitializeComponent();
         }
+
+        private void lbl_Account_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

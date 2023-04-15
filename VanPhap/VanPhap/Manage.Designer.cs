@@ -112,7 +112,7 @@
             this.txt_Name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Name.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Name.Location = new System.Drawing.Point(132, 23);
-            this.txt_Name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(353, 32);
             this.txt_Name.TabIndex = 3;
@@ -136,7 +136,7 @@
             this.txt_NickName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_NickName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NickName.Location = new System.Drawing.Point(132, 64);
-            this.txt_NickName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_NickName.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NickName.Name = "txt_NickName";
             this.txt_NickName.Size = new System.Drawing.Size(353, 32);
             this.txt_NickName.TabIndex = 10;
@@ -159,7 +159,7 @@
             this.date_Birthday.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.date_Birthday.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_Birthday.Location = new System.Drawing.Point(133, 142);
-            this.date_Birthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_Birthday.Margin = new System.Windows.Forms.Padding(4);
             this.date_Birthday.Name = "date_Birthday";
             this.date_Birthday.Size = new System.Drawing.Size(353, 32);
             this.date_Birthday.TabIndex = 11;
@@ -182,7 +182,7 @@
             this.txt_ConGiap.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_ConGiap.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ConGiap.Location = new System.Drawing.Point(669, 23);
-            this.txt_ConGiap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_ConGiap.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ConGiap.Name = "txt_ConGiap";
             this.txt_ConGiap.Size = new System.Drawing.Size(353, 32);
             this.txt_ConGiap.TabIndex = 14;
@@ -206,7 +206,7 @@
             this.txt_Sao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Sao.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Sao.Location = new System.Drawing.Point(669, 64);
-            this.txt_Sao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Sao.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Sao.Name = "txt_Sao";
             this.txt_Sao.Size = new System.Drawing.Size(353, 32);
             this.txt_Sao.TabIndex = 16;
@@ -230,7 +230,7 @@
             this.txt_Han.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Han.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Han.Location = new System.Drawing.Point(669, 105);
-            this.txt_Han.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Han.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Han.Name = "txt_Han";
             this.txt_Han.Size = new System.Drawing.Size(353, 32);
             this.txt_Han.TabIndex = 18;
@@ -376,7 +376,7 @@
             this.pnl_Form.Controls.Add(this.date_Birthday);
             this.pnl_Form.Controls.Add(this.txt_NickName);
             this.pnl_Form.Location = new System.Drawing.Point(8, 80);
-            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Form.Name = "pnl_Form";
             this.pnl_Form.Size = new System.Drawing.Size(1104, 202);
             this.pnl_Form.TabIndex = 20;
@@ -388,7 +388,7 @@
             this.btn_find.ImageIndex = 4;
             this.btn_find.ImageList = this.imageList1;
             this.btn_find.Location = new System.Drawing.Point(959, 164);
-            this.btn_find.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_find.Margin = new System.Windows.Forms.Padding(4);
             this.btn_find.Name = "btn_find";
             this.btn_find.Size = new System.Drawing.Size(100, 32);
             this.btn_find.TabIndex = 25;
@@ -413,7 +413,7 @@
             this.rbm_Woman.AutoSize = true;
             this.rbm_Woman.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_Woman.Location = new System.Drawing.Point(275, 103);
-            this.rbm_Woman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbm_Woman.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_Woman.Name = "rbm_Woman";
             this.rbm_Woman.Size = new System.Drawing.Size(61, 29);
             this.rbm_Woman.TabIndex = 24;
@@ -427,7 +427,7 @@
             this.rbm_other.AutoSize = true;
             this.rbm_other.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_other.Location = new System.Drawing.Point(361, 103);
-            this.rbm_other.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbm_other.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_other.Name = "rbm_other";
             this.rbm_other.Size = new System.Drawing.Size(78, 29);
             this.rbm_other.TabIndex = 23;
@@ -441,7 +441,7 @@
             this.rbm_Man.AutoSize = true;
             this.rbm_Man.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_Man.Location = new System.Drawing.Point(173, 103);
-            this.rbm_Man.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbm_Man.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_Man.Name = "rbm_Man";
             this.rbm_Man.Size = new System.Drawing.Size(75, 29);
             this.rbm_Man.TabIndex = 22;
@@ -457,7 +457,7 @@
             this.btn_Update.ImageIndex = 1;
             this.btn_Update.ImageList = this.imageList1;
             this.btn_Update.Location = new System.Drawing.Point(743, 164);
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(100, 32);
             this.btn_Update.TabIndex = 21;
@@ -472,7 +472,7 @@
             this.btn_Delete.ImageIndex = 2;
             this.btn_Delete.ImageList = this.imageList1;
             this.btn_Delete.Location = new System.Drawing.Point(851, 164);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(100, 32);
             this.btn_Delete.TabIndex = 20;
@@ -504,7 +504,7 @@
             this.tabale_List.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.tabale_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabale_List.Location = new System.Drawing.Point(5, 53);
-            this.tabale_List.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabale_List.Margin = new System.Windows.Forms.Padding(4);
             this.tabale_List.Name = "tabale_List";
             this.tabale_List.RowHeadersWidth = 51;
             this.tabale_List.Size = new System.Drawing.Size(1092, 447);
@@ -516,7 +516,7 @@
             this.txt_search.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_search.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_search.Location = new System.Drawing.Point(680, 11);
-            this.txt_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(4);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(353, 29);
             this.txt_search.TabIndex = 26;
@@ -544,7 +544,7 @@
             this.pnl_List.Controls.Add(this.tabale_List);
             this.pnl_List.Controls.Add(this.txt_search);
             this.pnl_List.Location = new System.Drawing.Point(8, 341);
-            this.pnl_List.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_List.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_List.Name = "pnl_List";
             this.pnl_List.Size = new System.Drawing.Size(1104, 505);
             this.pnl_List.TabIndex = 28;
@@ -556,7 +556,7 @@
             this.btn_findIcon.ImageIndex = 1;
             this.btn_findIcon.ImageList = this.icon;
             this.btn_findIcon.Location = new System.Drawing.Point(1043, 11);
-            this.btn_findIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_findIcon.Margin = new System.Windows.Forms.Padding(4);
             this.btn_findIcon.Name = "btn_findIcon";
             this.btn_findIcon.Size = new System.Drawing.Size(45, 33);
             this.btn_findIcon.TabIndex = 27;
@@ -589,7 +589,7 @@
             this.Controls.Add(this.Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Menu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_SoCauAn";
             this.Text = "Quản lý cầu an";
             this.Load += new System.EventHandler(this.Form_SoThongTin_Load);
