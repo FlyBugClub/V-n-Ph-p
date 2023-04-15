@@ -55,7 +55,7 @@
             this.lbl_Account.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Account.Location = new System.Drawing.Point(100, 89);
             this.lbl_Account.Name = "lbl_Account";
-            this.lbl_Account.Size = new System.Drawing.Size(106, 26);
+            this.lbl_Account.Size = new System.Drawing.Size(100, 25);
             this.lbl_Account.TabIndex = 1;
             this.lbl_Account.Text = "Tài khoản";
             this.lbl_Account.Click += new System.EventHandler(this.lbl_Account_Click);
@@ -69,6 +69,7 @@
             this.txt_Account.Name = "txt_Account";
             this.txt_Account.Size = new System.Drawing.Size(273, 32);
             this.txt_Account.TabIndex = 4;
+            this.txt_Account.TextChanged += new System.EventHandler(this.txt_Account_TextChanged);
             // 
             // txt_Password
             // 
@@ -88,7 +89,7 @@
             this.lbl_Password.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Password.Location = new System.Drawing.Point(100, 129);
             this.lbl_Password.Name = "lbl_Password";
-            this.lbl_Password.Size = new System.Drawing.Size(99, 26);
+            this.lbl_Password.Size = new System.Drawing.Size(95, 25);
             this.lbl_Password.TabIndex = 5;
             this.lbl_Password.Text = "Mật khẩu";
             this.lbl_Password.Click += new System.EventHandler(this.label1_Click);

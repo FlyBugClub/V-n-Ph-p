@@ -36,5 +36,10 @@ namespace VanPhap
         {
 
         }
+
+        private void txt_Account_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
