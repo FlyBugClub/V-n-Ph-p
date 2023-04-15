@@ -17,37 +17,12 @@ namespace VanPhap
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void tabale_List_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void txt_Name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_name_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form_SoThongTin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbm_Man_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void btn_Add_Click(object sender, EventArgs e)
         {
 
         }
