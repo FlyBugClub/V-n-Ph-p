@@ -9,14 +9,3 @@ E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CoreCompileInput
 E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.exe
 E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
 E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.Form_SoCauAn.resources
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\bin\Debug\VanPhap.exe.config
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\bin\Debug\VanPhap.exe
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\bin\Debug\VanPhap.pdb
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.AssemblyReference.cache
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.SuggestedBindingRedirects.cache
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.Form_SoCauAn.resources
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.Properties.Resources.resources
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.GenerateResource.cache
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CoreCompileInputs.cache
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.exe
-C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
