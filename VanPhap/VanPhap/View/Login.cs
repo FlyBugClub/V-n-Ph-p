@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VanPhap.Models;
 
 namespace VanPhap
 {
@@ -34,7 +35,44 @@ namespace VanPhap
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            Account acc = new Account();
+            String title = "Lưu ý";
 
+            try
+            {
+                String account = txt_Account.Text.ToString();
+                String password = txt_Password.Text.ToString();
+
+                if (account.Equals("ABC") & password.Equals("123"))
+                {
+                    Form_SoCauAn Mform = new Form_SoCauAn();
+                    Mform.Show();
+                }
+                else if (account.Equals("") || password.Equals(""))
+                {
+                    String messege = "Vui lòng nhập tài khoản và mật khẩu";
+                    MessageBox.Show(messege, title);
+                }
+                else
+                {
+                    String messege = "Mật khẩu và tài khoản không đúng. Xin vui lòng nhập lại";
+                    MessageBox.Show(messege, title);
+                }
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.Message);
+            }   
+        }
+
+        private void pressEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_Login_Click(this, new EventArgs());
+                Form_SoCauAn Mform = new Form_SoCauAn();
+                Mform.Show();
+            }
         }
 
         private void txt_Account_TextChanged(object sender, EventArgs e)

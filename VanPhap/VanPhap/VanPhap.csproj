@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Manage_Form.cs" />
+    <Compile Include="View\Acc.cs" />
     <Compile Include="View\Manage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,8 +122,6 @@
   <ItemGroup>
     <None Include="img\guide_icon01.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
