@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VanPhap.Models;
+using VanPhapShared;
+
 
 namespace VanPhap
 {
@@ -17,6 +18,7 @@ namespace VanPhap
         {
             InitializeComponent();
         }
+       
 
         private void lbl_Account_Click(object sender, EventArgs e)
         {
@@ -35,7 +37,7 @@ namespace VanPhap
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            Account acc = new Account();
+            //Account acc = new Account();
             String title = "Lưu ý";
 
             try

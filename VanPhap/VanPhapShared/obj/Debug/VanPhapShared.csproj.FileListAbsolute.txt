@@ -1,0 +1,7 @@
+C:\Git\Van-Phap\VanPhap\VanPhapShared\bin\Debug\VanPhapShared.dll.config
+C:\Git\Van-Phap\VanPhap\VanPhapShared\bin\Debug\VanPhapShared.dll
+C:\Git\Van-Phap\VanPhap\VanPhapShared\bin\Debug\VanPhapShared.pdb
+C:\Git\Van-Phap\VanPhap\VanPhapShared\obj\Debug\VanPhapShared.csproj.AssemblyReference.cache
+C:\Git\Van-Phap\VanPhap\VanPhapShared\obj\Debug\VanPhapShared.csproj.CoreCompileInputs.cache
+C:\Git\Van-Phap\VanPhap\VanPhapShared\obj\Debug\VanPhapShared.dll
+C:\Git\Van-Phap\VanPhap\VanPhapShared\obj\Debug\VanPhapShared.pdb

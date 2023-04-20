@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VanPhapShared;
+using VanPhapService;
+using System.Security.Policy;
 
 namespace VanPhap
 {
+    
     public partial class Form_SoCauAn : Form
     {
+        const String URL = "tcp://127.0.0.1:6969/longtt";
+        IVanPhapBUS VanPhapBUS =  (IVanPhapBUS)Activator.GetObject(typeof(IVanPhapBUS), URL);
         public Form_SoCauAn()
         {
             InitializeComponent();
+        }
+
+        private void Manage_Load(object sender, EventArgs e)
+        { 
+            List<ChiTietSo> humans = VanPhapBUS.GetAll();
+            tabale_List.DataSource = humans;
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -55,6 +68,16 @@ namespace VanPhap
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void tabale_List_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     } 
 }

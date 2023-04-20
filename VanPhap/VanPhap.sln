@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VanPhap", "VanPhap\VanPhap.csproj", "{EB79447E-B3A4-4DB3-BB0D-512E3F34E1F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VanPhapService", "VanPhapService\VanPhapService.csproj", "{F18B26EA-A31D-4497-9925-FD53D140A28F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VanPhapShared", "VanPhapShared\VanPhapShared.csproj", "{0600ED87-1ADF-4007-B65D-470FEBBE2ECA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{EB79447E-B3A4-4DB3-BB0D-512E3F34E1F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB79447E-B3A4-4DB3-BB0D-512E3F34E1F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB79447E-B3A4-4DB3-BB0D-512E3F34E1F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F18B26EA-A31D-4497-9925-FD53D140A28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18B26EA-A31D-4497-9925-FD53D140A28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18B26EA-A31D-4497-9925-FD53D140A28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18B26EA-A31D-4497-9925-FD53D140A28F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0600ED87-1ADF-4007-B65D-470FEBBE2ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0600ED87-1ADF-4007-B65D-470FEBBE2ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0600ED87-1ADF-4007-B65D-470FEBBE2ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0600ED87-1ADF-4007-B65D-470FEBBE2ECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

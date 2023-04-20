@@ -46,8 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\Manage_Form.cs" />
     <Compile Include="View\Acc.cs" />
     <Compile Include="View\Manage.cs">
       <SubType>Form</SubType>
@@ -123,5 +121,15 @@
     <None Include="img\guide_icon01.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VanPhapService\VanPhapService.csproj">
+      <Project>{f18b26ea-a31d-4497-9925-fd53d140a28f}</Project>
+      <Name>VanPhapService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VanPhapShared\VanPhapShared.csproj">
+      <Project>{0600ed87-1adf-4007-b65d-470febbe2eca}</Project>
+      <Name>VanPhapShared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

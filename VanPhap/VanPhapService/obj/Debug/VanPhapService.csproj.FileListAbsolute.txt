@@ -1,0 +1,14 @@
+C:\Git\Van-Phap\VanPhap\VanPhapService\bin\Debug\VanPhapService.exe.config
+C:\Git\Van-Phap\VanPhap\VanPhapService\bin\Debug\VanPhapService.exe
+C:\Git\Van-Phap\VanPhap\VanPhapService\bin\Debug\VanPhapService.pdb
+C:\Git\Van-Phap\VanPhap\VanPhapService\bin\Debug\VanPhapShared.dll
+C:\Git\Van-Phap\VanPhap\VanPhapService\bin\Debug\VanPhapShared.pdb
+C:\Git\Van-Phap\VanPhap\VanPhapService\bin\Debug\VanPhapShared.dll.config
+C:\Git\Van-Phap\VanPhap\VanPhapService\obj\Debug\VanPhapService.csproj.AssemblyReference.cache
+C:\Git\Van-Phap\VanPhap\VanPhapService\obj\Debug\VanPhapService.csproj.SuggestedBindingRedirects.cache
+C:\Git\Van-Phap\VanPhap\VanPhapService\obj\Debug\VanPhapService.ProjectInstaller.resources
+C:\Git\Van-Phap\VanPhap\VanPhapService\obj\Debug\VanPhapService.csproj.GenerateResource.cache
+C:\Git\Van-Phap\VanPhap\VanPhapService\obj\Debug\VanPhapService.csproj.CoreCompileInputs.cache
+C:\Git\Van-Phap\VanPhap\VanPhapService\obj\Debug\VanPhapService.csproj.CopyComplete
+C:\Git\Van-Phap\VanPhap\VanPhapService\obj\Debug\VanPhapService.exe
+C:\Git\Van-Phap\VanPhap\VanPhapService\obj\Debug\VanPhapService.pdb

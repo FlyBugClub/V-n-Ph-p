@@ -22,3 +22,10 @@ C:\Git\Van-Phap\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.GenerateResource.cache
 C:\Git\Van-Phap\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CoreCompileInputs.cache
 C:\Git\Van-Phap\VanPhap\VanPhap\obj\Debug\VanPhap.exe
 C:\Git\Van-Phap\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
+C:\Git\Van-Phap\VanPhap\VanPhap\bin\Debug\VanPhapShared.dll
+C:\Git\Van-Phap\VanPhap\VanPhap\bin\Debug\VanPhapShared.pdb
+C:\Git\Van-Phap\VanPhap\VanPhap\bin\Debug\VanPhapShared.dll.config
+C:\Git\Van-Phap\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CopyComplete
+C:\Git\Van-Phap\VanPhap\VanPhap\bin\Debug\VanPhapService.exe
+C:\Git\Van-Phap\VanPhap\VanPhap\bin\Debug\VanPhapService.pdb
+C:\Git\Van-Phap\VanPhap\VanPhap\bin\Debug\VanPhapService.exe.config

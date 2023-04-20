@@ -55,6 +55,9 @@
             this.giúpĐỡToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Form = new System.Windows.Forms.Panel();
+            this.txt_birthday = new System.Windows.Forms.TextBox();
+            this.lbl_LuuTru = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_find = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.rbm_Woman = new System.Windows.Forms.RadioButton();
@@ -69,9 +72,6 @@
             this.pnl_List = new System.Windows.Forms.Panel();
             this.btn_findIcon = new System.Windows.Forms.Button();
             this.lbl_List = new System.Windows.Forms.Label();
-            this.lbl_LuuTru = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txt_birthday = new System.Windows.Forms.TextBox();
             this.Menu.SuspendLayout();
             this.pnl_Form.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabale_List)).BeginInit();
@@ -114,7 +114,7 @@
             this.txt_Name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Name.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Name.Location = new System.Drawing.Point(132, 31);
-            this.txt_Name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(353, 32);
             this.txt_Name.TabIndex = 3;
@@ -138,7 +138,7 @@
             this.txt_NickName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_NickName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NickName.Location = new System.Drawing.Point(132, 72);
-            this.txt_NickName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_NickName.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NickName.Name = "txt_NickName";
             this.txt_NickName.Size = new System.Drawing.Size(353, 32);
             this.txt_NickName.TabIndex = 10;
@@ -174,7 +174,7 @@
             this.txt_ConGiap.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_ConGiap.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ConGiap.Location = new System.Drawing.Point(669, 31);
-            this.txt_ConGiap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_ConGiap.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ConGiap.Name = "txt_ConGiap";
             this.txt_ConGiap.Size = new System.Drawing.Size(353, 32);
             this.txt_ConGiap.TabIndex = 14;
@@ -198,7 +198,7 @@
             this.txt_Sao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Sao.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Sao.Location = new System.Drawing.Point(669, 72);
-            this.txt_Sao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Sao.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Sao.Name = "txt_Sao";
             this.txt_Sao.Size = new System.Drawing.Size(353, 32);
             this.txt_Sao.TabIndex = 16;
@@ -222,7 +222,7 @@
             this.txt_Han.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Han.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Han.Location = new System.Drawing.Point(669, 113);
-            this.txt_Han.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Han.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Han.Name = "txt_Han";
             this.txt_Han.Size = new System.Drawing.Size(353, 32);
             this.txt_Han.TabIndex = 18;
@@ -254,6 +254,7 @@
             this.Menu.Size = new System.Drawing.Size(1124, 29);
             this.Menu.TabIndex = 19;
             this.Menu.Text = "menuStrip1";
+            this.Menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.Menu_ItemClicked);
             // 
             // thoátToolStripMenuItem
             // 
@@ -371,10 +372,43 @@
             this.pnl_Form.Controls.Add(this.lbl_NickName);
             this.pnl_Form.Controls.Add(this.txt_NickName);
             this.pnl_Form.Location = new System.Drawing.Point(8, 80);
-            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Form.Name = "pnl_Form";
             this.pnl_Form.Size = new System.Drawing.Size(1104, 244);
             this.pnl_Form.TabIndex = 20;
+            // 
+            // txt_birthday
+            // 
+            this.txt_birthday.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_birthday.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_birthday.Location = new System.Drawing.Point(132, 148);
+            this.txt_birthday.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_birthday.Name = "txt_birthday";
+            this.txt_birthday.Size = new System.Drawing.Size(353, 32);
+            this.txt_birthday.TabIndex = 28;
+            // 
+            // lbl_LuuTru
+            // 
+            this.lbl_LuuTru.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_LuuTru.AutoSize = true;
+            this.lbl_LuuTru.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_LuuTru.Location = new System.Drawing.Point(28, 192);
+            this.lbl_LuuTru.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_LuuTru.Name = "lbl_LuuTru";
+            this.lbl_LuuTru.Size = new System.Drawing.Size(77, 25);
+            this.lbl_LuuTru.TabIndex = 26;
+            this.lbl_LuuTru.Text = "Lưu trú";
+            this.lbl_LuuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(133, 190);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(353, 32);
+            this.textBox1.TabIndex = 27;
             // 
             // btn_find
             // 
@@ -383,7 +417,7 @@
             this.btn_find.ImageIndex = 4;
             this.btn_find.ImageList = this.imageList1;
             this.btn_find.Location = new System.Drawing.Point(958, 179);
-            this.btn_find.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_find.Margin = new System.Windows.Forms.Padding(4);
             this.btn_find.Name = "btn_find";
             this.btn_find.Size = new System.Drawing.Size(100, 50);
             this.btn_find.TabIndex = 25;
@@ -408,7 +442,7 @@
             this.rbm_Woman.AutoSize = true;
             this.rbm_Woman.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_Woman.Location = new System.Drawing.Point(275, 111);
-            this.rbm_Woman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbm_Woman.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_Woman.Name = "rbm_Woman";
             this.rbm_Woman.Size = new System.Drawing.Size(61, 29);
             this.rbm_Woman.TabIndex = 24;
@@ -422,7 +456,7 @@
             this.rbm_other.AutoSize = true;
             this.rbm_other.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_other.Location = new System.Drawing.Point(361, 111);
-            this.rbm_other.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbm_other.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_other.Name = "rbm_other";
             this.rbm_other.Size = new System.Drawing.Size(78, 29);
             this.rbm_other.TabIndex = 23;
@@ -436,7 +470,7 @@
             this.rbm_Man.AutoSize = true;
             this.rbm_Man.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_Man.Location = new System.Drawing.Point(173, 111);
-            this.rbm_Man.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbm_Man.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_Man.Name = "rbm_Man";
             this.rbm_Man.Size = new System.Drawing.Size(75, 29);
             this.rbm_Man.TabIndex = 22;
@@ -452,7 +486,7 @@
             this.btn_Update.ImageIndex = 1;
             this.btn_Update.ImageList = this.imageList1;
             this.btn_Update.Location = new System.Drawing.Point(730, 179);
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(100, 50);
             this.btn_Update.TabIndex = 21;
@@ -467,7 +501,7 @@
             this.btn_Delete.ImageIndex = 2;
             this.btn_Delete.ImageList = this.imageList1;
             this.btn_Delete.Location = new System.Drawing.Point(844, 179);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(100, 50);
             this.btn_Delete.TabIndex = 20;
@@ -498,11 +532,12 @@
             this.tabale_List.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.tabale_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabale_List.Location = new System.Drawing.Point(5, 53);
-            this.tabale_List.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabale_List.Margin = new System.Windows.Forms.Padding(4);
             this.tabale_List.Name = "tabale_List";
             this.tabale_List.RowHeadersWidth = 51;
             this.tabale_List.Size = new System.Drawing.Size(1092, 418);
             this.tabale_List.TabIndex = 21;
+            this.tabale_List.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabale_List_CellContentClick);
             // 
             // txt_search
             // 
@@ -510,7 +545,7 @@
             this.txt_search.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_search.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_search.Location = new System.Drawing.Point(680, 11);
-            this.txt_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(4);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(353, 29);
             this.txt_search.TabIndex = 26;
@@ -538,7 +573,7 @@
             this.pnl_List.Controls.Add(this.tabale_List);
             this.pnl_List.Controls.Add(this.txt_search);
             this.pnl_List.Location = new System.Drawing.Point(8, 370);
-            this.pnl_List.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_List.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_List.Name = "pnl_List";
             this.pnl_List.Size = new System.Drawing.Size(1104, 476);
             this.pnl_List.TabIndex = 28;
@@ -550,7 +585,7 @@
             this.btn_findIcon.ImageIndex = 1;
             this.btn_findIcon.ImageList = this.icon;
             this.btn_findIcon.Location = new System.Drawing.Point(1043, 11);
-            this.btn_findIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_findIcon.Margin = new System.Windows.Forms.Padding(4);
             this.btn_findIcon.Name = "btn_findIcon";
             this.btn_findIcon.Size = new System.Drawing.Size(45, 33);
             this.btn_findIcon.TabIndex = 27;
@@ -570,39 +605,6 @@
             this.lbl_List.TabIndex = 29;
             this.lbl_List.Text = "Danh sách";
             // 
-            // lbl_LuuTru
-            // 
-            this.lbl_LuuTru.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_LuuTru.AutoSize = true;
-            this.lbl_LuuTru.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LuuTru.Location = new System.Drawing.Point(28, 192);
-            this.lbl_LuuTru.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_LuuTru.Name = "lbl_LuuTru";
-            this.lbl_LuuTru.Size = new System.Drawing.Size(77, 25);
-            this.lbl_LuuTru.TabIndex = 26;
-            this.lbl_LuuTru.Text = "Lưu trú";
-            this.lbl_LuuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(133, 190);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(353, 32);
-            this.textBox1.TabIndex = 27;
-            // 
-            // txt_birthday
-            // 
-            this.txt_birthday.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_birthday.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_birthday.Location = new System.Drawing.Point(132, 148);
-            this.txt_birthday.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_birthday.Name = "txt_birthday";
-            this.txt_birthday.Size = new System.Drawing.Size(353, 32);
-            this.txt_birthday.TabIndex = 28;
-            // 
             // Form_SoCauAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -616,7 +618,7 @@
             this.Controls.Add(this.Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Menu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_SoCauAn";
             this.Text = "Quản lý cầu an";
             this.Load += new System.EventHandler(this.Form_SoThongTin_Load);
