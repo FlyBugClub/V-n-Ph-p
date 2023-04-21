@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VanPhapShared;
-namespace VanPhapService
-{
-    internal class VanPhapBUS : MarshalByRefObject, IVanPhapBUS
-    {
+using VanPhap.Model;
 
+namespace HealthyClient
+{
+    internal class VanPhapBUS
+    {
         public List<ChiTietSo> GetAll()
         {
             List<ChiTietSo> humans = new VanPhapDAO().SelectAll();
+            return humans;
+        }
+
+        public List <PhatTu> GetAllPhatTu()
+        {
+            List<PhatTu> humans = new VanPhapDAO().SelectAllPhatTu();
             return humans;
         }
 
@@ -20,7 +26,7 @@ namespace VanPhapService
             List<ChiTietSo> humans = new VanPhapDAO().SelectByKeyword(keyword);
             return humans;
         }
-
+        
         public ChiTietSo GetDetails(int id)
         {
             ChiTietSo human = new VanPhapDAO().SelectByID(id);
@@ -41,12 +47,5 @@ namespace VanPhapService
             bool result = new VanPhapDAO().Delete(id);
             return result;
         }
-
-        public List<ChiTietSo> Search(string keyword)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
-

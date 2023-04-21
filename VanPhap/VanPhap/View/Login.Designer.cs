@@ -65,7 +65,7 @@
             this.txt_Account.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Account.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Account.Location = new System.Drawing.Point(213, 82);
-            this.txt_Account.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Account.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Account.Name = "txt_Account";
             this.txt_Account.Size = new System.Drawing.Size(273, 32);
             this.txt_Account.TabIndex = 4;
@@ -76,7 +76,7 @@
             this.txt_Password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Password.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.Location = new System.Drawing.Point(213, 123);
-            this.txt_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(273, 32);
             this.txt_Password.TabIndex = 6;
@@ -123,6 +123,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

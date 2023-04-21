@@ -376,6 +376,7 @@
             this.pnl_Form.Name = "pnl_Form";
             this.pnl_Form.Size = new System.Drawing.Size(1104, 244);
             this.pnl_Form.TabIndex = 20;
+            this.pnl_Form.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Form_Paint);
             // 
             // txt_birthday
             // 

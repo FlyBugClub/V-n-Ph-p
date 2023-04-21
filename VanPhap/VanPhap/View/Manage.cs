@@ -7,27 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VanPhapShared;
-using VanPhapService;
 using System.Security.Policy;
+using VanPhap.Model;
+using HealthyClient;
 
 namespace VanPhap
 {
     
     public partial class Form_SoCauAn : Form
     {
-        const String URL = "tcp://127.0.0.1:6969/longtt";
-        IVanPhapBUS VanPhapBUS =  (IVanPhapBUS)Activator.GetObject(typeof(IVanPhapBUS), URL);
+       
         public Form_SoCauAn()
         {
             InitializeComponent();
         }
 
-        private void Manage_Load(object sender, EventArgs e)
-        { 
-            List<ChiTietSo> humans = VanPhapBUS.GetAll();
+        private void Form_SoThongTin_Load(object sender, EventArgs e)
+        {
+            List <PhatTu> humans = new VanPhapBUS().GetAllPhatTu();
             tabale_List.DataSource = humans;
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,10 +43,7 @@ namespace VanPhap
 
         }
 
-        private void Form_SoThongTin_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -76,6 +71,11 @@ namespace VanPhap
         }
 
         private void Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void pnl_Form_Paint(object sender, PaintEventArgs e)
         {
 
         }

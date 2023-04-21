@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VanPhapShared;
+
 
 
 namespace VanPhap
@@ -78,6 +78,11 @@ namespace VanPhap
         }
 
         private void txt_Account_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VanPhapShared
+namespace VanPhap
 {
-    [Serializable]
     public class VanPhap
     {
         

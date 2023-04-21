@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VanPhapShared
+namespace VanPhap.Model
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -23,8 +23,7 @@ namespace VanPhapShared
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
-    [Serializable]
-    public partial class DataClasses1DataContext : System.Data.Linq.DataContext
+	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -34,7 +33,7 @@ namespace VanPhapShared
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::VanPhapShared.Properties.Settings.Default.DataSourceConnectionString, mappingSource)
+				base(global::VanPhap.Properties.Settings.Default.DataSourceConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -62,8 +61,8 @@ namespace VanPhapShared
 		{
 			OnCreated();
 		}
-        
-        public System.Data.Linq.Table<ChiTietSo> ChiTietSos
+		
+		public System.Data.Linq.Table<ChiTietSo> ChiTietSos
 		{
 			get
 			{
@@ -79,19 +78,11 @@ namespace VanPhapShared
 			}
 		}
 		
-		public System.Data.Linq.Table<Han> Hans
+		public System.Data.Linq.Table<PhatTu> PhatTus
 		{
 			get
 			{
-				return this.GetTable<Han>();
-			}
-		}
-		
-		public System.Data.Linq.Table<LoaiSo> LoaiSos
-		{
-			get
-			{
-				return this.GetTable<LoaiSo>();
+				return this.GetTable<PhatTu>();
 			}
 		}
 		
@@ -103,19 +94,11 @@ namespace VanPhapShared
 			}
 		}
 		
-		public System.Data.Linq.Table<PhatTu> PhatTus
+		public System.Data.Linq.Table<So> Sos
 		{
 			get
 			{
-				return this.GetTable<PhatTu>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Nam> Nams
-		{
-			get
-			{
-				return this.GetTable<Nam>();
+				return this.GetTable<So>();
 			}
 		}
 		
@@ -127,26 +110,38 @@ namespace VanPhapShared
 			}
 		}
 		
-		public System.Data.Linq.Table<So> Sos
+		public System.Data.Linq.Table<LoaiSo> LoaiSos
 		{
 			get
 			{
-				return this.GetTable<So>();
+				return this.GetTable<LoaiSo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Han> Hans
+		{
+			get
+			{
+				return this.GetTable<Han>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Nam> Nams
+		{
+			get
+			{
+				return this.GetTable<Nam>();
 			}
 		}
 	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietSo")]
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietSo")]
 	public partial class ChiTietSo
 	{
 		
 		private System.Nullable<double> _ID;
 		
 		private System.Nullable<double> _IDSo;
-		
-		private string _HoTen;
-		
-		private string _PhapDanh;
 		
 		private System.Nullable<double> _NamNu;
 		
@@ -190,38 +185,6 @@ namespace VanPhapShared
 				if ((this._IDSo != value))
 				{
 					this._IDSo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(255)")]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this._HoTen = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhapDanh", DbType="NVarChar(255)")]
-		public string PhapDanh
-		{
-			get
-			{
-				return this._PhapDanh;
-			}
-			set
-			{
-				if ((this._PhapDanh != value))
-				{
-					this._PhapDanh = value;
 				}
 			}
 		}
@@ -306,8 +269,8 @@ namespace VanPhapShared
 			}
 		}
 	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DangLe")]
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DangLe")]
 	public partial class DangLe
 	{
 		
@@ -387,179 +350,8 @@ namespace VanPhapShared
 			}
 		}
 	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Han")]
-	public partial class Han
-	{
-		
-		private System.Nullable<double> _ID;
-		
-		private string _Han1;
-		
-		private string _Han_Unicode;
-		
-		public Han()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Han", Storage="_Han1", DbType="NVarChar(255)")]
-		public string Han1
-		{
-			get
-			{
-				return this._Han1;
-			}
-			set
-			{
-				if ((this._Han1 != value))
-				{
-					this._Han1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Han_Unicode", DbType="NVarChar(255)")]
-		public string Han_Unicode
-		{
-			get
-			{
-				return this._Han_Unicode;
-			}
-			set
-			{
-				if ((this._Han_Unicode != value))
-				{
-					this._Han_Unicode = value;
-				}
-			}
-		}
-	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiSo")]
-	public partial class LoaiSo
-	{
-		
-		private System.Nullable<double> _ID;
-		
-		private string _GhiChu;
-		
-		private string _GhiChu_Unicode;
-		
-		public LoaiSo()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(255)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu_Unicode", DbType="NVarChar(255)")]
-		public string GhiChu_Unicode
-		{
-			get
-			{
-				return this._GhiChu_Unicode;
-			}
-			set
-			{
-				if ((this._GhiChu_Unicode != value))
-				{
-					this._GhiChu_Unicode = value;
-				}
-			}
-		}
-	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sao")]
-	public partial class Sao
-	{
-		
-		private System.Nullable<int> _ID;
-		
-		private string _Sao1;
-		
-		public Sao()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
-		public System.Nullable<int> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Sao", Storage="_Sao1", DbType="NVarChar(50)")]
-		public string Sao1
-		{
-			get
-			{
-				return this._Sao1;
-			}
-			set
-			{
-				if ((this._Sao1 != value))
-				{
-					this._Sao1 = value;
-				}
-			}
-		}
-	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PhatTu")]
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PhatTu")]
 	public partial class PhatTu
 	{
 		
@@ -693,18 +485,16 @@ namespace VanPhapShared
 			}
 		}
 	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Nam")]
-	public partial class Nam
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sao")]
+	public partial class Sao
 	{
 		
 		private System.Nullable<int> _ID;
 		
-		private System.Nullable<int> _NamDL;
+		private string _Sao1;
 		
-		private string _NamAL;
-		
-		public Nam()
+		public Sao()
 		{
 		}
 		
@@ -724,85 +514,24 @@ namespace VanPhapShared
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamDL", DbType="Int")]
-		public System.Nullable<int> NamDL
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Sao", Storage="_Sao1", DbType="NVarChar(50)")]
+		public string Sao1
 		{
 			get
 			{
-				return this._NamDL;
+				return this._Sao1;
 			}
 			set
 			{
-				if ((this._NamDL != value))
+				if ((this._Sao1 != value))
 				{
-					this._NamDL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamAL", DbType="NVarChar(50)")]
-		public string NamAL
-		{
-			get
-			{
-				return this._NamAL;
-			}
-			set
-			{
-				if ((this._NamAL != value))
-				{
-					this._NamAL = value;
+					this._Sao1 = value;
 				}
 			}
 		}
 	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiLe")]
-	public partial class LoaiLe
-	{
-		
-		private System.Nullable<int> _ID;
-		
-		private string _GhiChu;
-		
-		public LoaiLe()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
-		public System.Nullable<int> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(50)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-	}
-    [Serializable]
-    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.So")]
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.So")]
 	public partial class So
 	{
 		
@@ -896,6 +625,240 @@ namespace VanPhapShared
 				if ((this._IDLoaiSo != value))
 				{
 					this._IDLoaiSo = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiLe")]
+	public partial class LoaiLe
+	{
+		
+		private System.Nullable<int> _ID;
+		
+		private string _GhiChu;
+		
+		public LoaiLe()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
+		public System.Nullable<int> ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(50)")]
+		public string GhiChu
+		{
+			get
+			{
+				return this._GhiChu;
+			}
+			set
+			{
+				if ((this._GhiChu != value))
+				{
+					this._GhiChu = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiSo")]
+	public partial class LoaiSo
+	{
+		
+		private System.Nullable<double> _ID;
+		
+		private string _GhiChu;
+		
+		private string _GhiChu_Unicode;
+		
+		public LoaiSo()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
+		public System.Nullable<double> ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(255)")]
+		public string GhiChu
+		{
+			get
+			{
+				return this._GhiChu;
+			}
+			set
+			{
+				if ((this._GhiChu != value))
+				{
+					this._GhiChu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu_Unicode", DbType="NVarChar(255)")]
+		public string GhiChu_Unicode
+		{
+			get
+			{
+				return this._GhiChu_Unicode;
+			}
+			set
+			{
+				if ((this._GhiChu_Unicode != value))
+				{
+					this._GhiChu_Unicode = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Han")]
+	public partial class Han
+	{
+		
+		private System.Nullable<double> _ID;
+		
+		private string _Han1;
+		
+		private string _Han_Unicode;
+		
+		public Han()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
+		public System.Nullable<double> ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Han", Storage="_Han1", DbType="NVarChar(255)")]
+		public string Han1
+		{
+			get
+			{
+				return this._Han1;
+			}
+			set
+			{
+				if ((this._Han1 != value))
+				{
+					this._Han1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Han_Unicode", DbType="NVarChar(255)")]
+		public string Han_Unicode
+		{
+			get
+			{
+				return this._Han_Unicode;
+			}
+			set
+			{
+				if ((this._Han_Unicode != value))
+				{
+					this._Han_Unicode = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Nam")]
+	public partial class Nam
+	{
+		
+		private System.Nullable<int> _ID;
+		
+		private System.Nullable<int> _NamDL;
+		
+		private string _NamAL;
+		
+		public Nam()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
+		public System.Nullable<int> ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamDL", DbType="Int")]
+		public System.Nullable<int> NamDL
+		{
+			get
+			{
+				return this._NamDL;
+			}
+			set
+			{
+				if ((this._NamDL != value))
+				{
+					this._NamDL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamAL", DbType="NVarChar(50)")]
+		public string NamAL
+		{
+			get
+			{
+				return this._NamAL;
+			}
+			set
+			{
+				if ((this._NamAL != value))
+				{
+					this._NamAL = value;
 				}
 			}
 		}
