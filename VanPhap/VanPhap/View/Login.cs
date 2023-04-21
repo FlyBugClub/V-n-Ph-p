@@ -47,7 +47,7 @@ namespace VanPhap
 
                 if (account.Equals("ABC") & password.Equals("123"))
                 {
-                    Form_SoCauAn Mform = new Form_SoCauAn();
+                    form_manage Mform = new form_manage();
                     Mform.Show();
                 }
                 else if (account.Equals("") || password.Equals(""))
@@ -72,7 +72,7 @@ namespace VanPhap
             if (e.KeyCode == Keys.Enter)
             {
                 btn_Login_Click(this, new EventArgs());
-                Form_SoCauAn Mform = new Form_SoCauAn();
+                form_manage Mform = new form_manage();
                 Mform.Show();
             }
         }

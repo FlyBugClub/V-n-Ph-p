@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using VanPhap.Model;
 
-namespace HealthyClient
+namespace VanPhap
 {
     internal class VanPhapDAO
     {

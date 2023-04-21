@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=sql.bsite.net\MSSQL2016;User ID=ngunemay123_db" SettingsObjectName="VanPhap.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.ChiTietSo" Member="ChiTietSos">
-    <Type Name="ChiTietSo">
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="IDSo" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NamNu" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NgaySinh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="IDNamSinh" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HoTen_Unicode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="PhapDanh_Unicode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DangLe" Member="DangLes">
     <Type Name="DangLe">
       <Column Name="ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -70,6 +59,20 @@
       <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NamDL" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NamAL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietSo" Member="ChiTietSos">
+    <Type Name="ChiTietSo">
+      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IDSo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NamNu" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IDNamSinh" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HoTen_Unicode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PhapDanh_Unicode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Sao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Han" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tuoi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

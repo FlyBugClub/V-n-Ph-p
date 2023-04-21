@@ -62,14 +62,6 @@ namespace VanPhap.Model
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<ChiTietSo> ChiTietSos
-		{
-			get
-			{
-				return this.GetTable<ChiTietSo>();
-			}
-		}
-		
 		public System.Data.Linq.Table<DangLe> DangLes
 		{
 			get
@@ -133,139 +125,12 @@ namespace VanPhap.Model
 				return this.GetTable<Nam>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietSo")]
-	public partial class ChiTietSo
-	{
 		
-		private System.Nullable<double> _ID;
-		
-		private System.Nullable<double> _IDSo;
-		
-		private System.Nullable<double> _NamNu;
-		
-		private string _NgaySinh;
-		
-		private System.Nullable<double> _IDNamSinh;
-		
-		private string _HoTen_Unicode;
-		
-		private string _PhapDanh_Unicode;
-		
-		public ChiTietSo()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
+		public System.Data.Linq.Table<ChiTietSo> ChiTietSos
 		{
 			get
 			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDSo", DbType="Float")]
-		public System.Nullable<double> IDSo
-		{
-			get
-			{
-				return this._IDSo;
-			}
-			set
-			{
-				if ((this._IDSo != value))
-				{
-					this._IDSo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamNu", DbType="Float")]
-		public System.Nullable<double> NamNu
-		{
-			get
-			{
-				return this._NamNu;
-			}
-			set
-			{
-				if ((this._NamNu != value))
-				{
-					this._NamNu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="NVarChar(255)")]
-		public string NgaySinh
-		{
-			get
-			{
-				return this._NgaySinh;
-			}
-			set
-			{
-				if ((this._NgaySinh != value))
-				{
-					this._NgaySinh = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNamSinh", DbType="Float")]
-		public System.Nullable<double> IDNamSinh
-		{
-			get
-			{
-				return this._IDNamSinh;
-			}
-			set
-			{
-				if ((this._IDNamSinh != value))
-				{
-					this._IDNamSinh = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen_Unicode", DbType="NVarChar(255)")]
-		public string HoTen_Unicode
-		{
-			get
-			{
-				return this._HoTen_Unicode;
-			}
-			set
-			{
-				if ((this._HoTen_Unicode != value))
-				{
-					this._HoTen_Unicode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhapDanh_Unicode", DbType="NVarChar(255)")]
-		public string PhapDanh_Unicode
-		{
-			get
-			{
-				return this._PhapDanh_Unicode;
-			}
-			set
-			{
-				if ((this._PhapDanh_Unicode != value))
-				{
-					this._PhapDanh_Unicode = value;
-				}
+				return this.GetTable<ChiTietSo>();
 			}
 		}
 	}
@@ -859,6 +724,195 @@ namespace VanPhap.Model
 				if ((this._NamAL != value))
 				{
 					this._NamAL = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietSo")]
+	public partial class ChiTietSo
+	{
+		
+		private System.Nullable<double> _ID;
+		
+		private System.Nullable<double> _IDSo;
+		
+		private System.Nullable<double> _NamNu;
+		
+		private string _NgaySinh;
+		
+		private System.Nullable<double> _IDNamSinh;
+		
+		private string _HoTen_Unicode;
+		
+		private string _PhapDanh_Unicode;
+		
+		private string _Sao;
+		
+		private string _Han;
+		
+		private string _Tuoi;
+		
+		public ChiTietSo()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
+		public System.Nullable<double> ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDSo", DbType="Float")]
+		public System.Nullable<double> IDSo
+		{
+			get
+			{
+				return this._IDSo;
+			}
+			set
+			{
+				if ((this._IDSo != value))
+				{
+					this._IDSo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamNu", DbType="Float")]
+		public System.Nullable<double> NamNu
+		{
+			get
+			{
+				return this._NamNu;
+			}
+			set
+			{
+				if ((this._NamNu != value))
+				{
+					this._NamNu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="NVarChar(255)")]
+		public string NgaySinh
+		{
+			get
+			{
+				return this._NgaySinh;
+			}
+			set
+			{
+				if ((this._NgaySinh != value))
+				{
+					this._NgaySinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNamSinh", DbType="Float")]
+		public System.Nullable<double> IDNamSinh
+		{
+			get
+			{
+				return this._IDNamSinh;
+			}
+			set
+			{
+				if ((this._IDNamSinh != value))
+				{
+					this._IDNamSinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen_Unicode", DbType="NVarChar(255)")]
+		public string HoTen_Unicode
+		{
+			get
+			{
+				return this._HoTen_Unicode;
+			}
+			set
+			{
+				if ((this._HoTen_Unicode != value))
+				{
+					this._HoTen_Unicode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhapDanh_Unicode", DbType="NVarChar(255)")]
+		public string PhapDanh_Unicode
+		{
+			get
+			{
+				return this._PhapDanh_Unicode;
+			}
+			set
+			{
+				if ((this._PhapDanh_Unicode != value))
+				{
+					this._PhapDanh_Unicode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sao", DbType="NVarChar(50)")]
+		public string Sao
+		{
+			get
+			{
+				return this._Sao;
+			}
+			set
+			{
+				if ((this._Sao != value))
+				{
+					this._Sao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Han", DbType="NVarChar(50)")]
+		public string Han
+		{
+			get
+			{
+				return this._Han;
+			}
+			set
+			{
+				if ((this._Han != value))
+				{
+					this._Han = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tuoi", DbType="NVarChar(50)")]
+		public string Tuoi
+		{
+			get
+			{
+				return this._Tuoi;
+			}
+			set
+			{
+				if ((this._Tuoi != value))
+				{
+					this._Tuoi = value;
 				}
 			}
 		}

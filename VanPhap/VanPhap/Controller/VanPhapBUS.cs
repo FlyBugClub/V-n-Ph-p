@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VanPhap.Model;
 
-namespace HealthyClient
+namespace VanPhap
 {
     internal class VanPhapBUS
     {
