@@ -18,7 +18,12 @@ namespace VanPhap
         {
             InitializeComponent();
         }
-       
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+        }
 
         private void lbl_Account_Click(object sender, EventArgs e)
         {
@@ -78,14 +83,24 @@ namespace VanPhap
         }
 
         private void txt_Account_TextChanged(object sender, EventArgs e)
-        {
+        { 
 
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
+            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            {
+                btn_Login_Click(sender, e);
+            }
+        }
+
+        private void txt_Account_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            {
+                txt_Password.Focus();
+            }
         }
     }
 }
