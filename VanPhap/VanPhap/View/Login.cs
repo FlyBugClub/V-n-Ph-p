@@ -84,7 +84,8 @@ namespace VanPhap
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
         }
     }
 }
