@@ -319,7 +319,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Menu;
             this.Name = "form_manage";
-            this.Text = "Quản lý cầu an";
+            this.Text = "Quản lý sớ cầu";
             this.Load += new System.EventHandler(this.Form_SoThongTin_Load);
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();

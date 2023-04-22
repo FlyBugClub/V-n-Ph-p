@@ -69,7 +69,8 @@ namespace VanPhap
             catch (Exception e1)
             {
                 Console.WriteLine(e1.Message);
-            }   
+            }
+            //this.Hide();
         }
 
         private void pressEnter(object sender, KeyEventArgs e)
@@ -79,6 +80,7 @@ namespace VanPhap
                 btn_Login_Click(this, new EventArgs());
                 form_manage Mform = new form_manage();
                 Mform.Show();
+                Mform.BringToFront();
             }
         }
 
