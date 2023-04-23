@@ -45,15 +45,15 @@ namespace VanPhap.View
             ChiTietSo newHuman = new ChiTietSo()
             {
 
-                IDSo = 69269, 
+                IDSo = 69271, 
                 GioiTinh = "Nam",
-                IDNamSinh = 2002.0,
-                HoTen = "TaMinhDuc",
-                PhapDanh = "TaMinhDuc",
-                Tuoi = "TaMinhDuc",
-                Sao = "TaMinhDuc",
-                Han = "TaMinhDuc",
-                IDD = 16,
+                IDNamSinh = 1999.0,
+                HoTen = "Nguyen Quoc Duy",
+                PhapDanh = "Danny Nguyen",
+                Tuoi = "Ky Mao",
+                Sao = "Ke Do",
+                Han = "Chiu",
+                IDD = 0,
             };
             bool result = new VanPhapBUS().AddNew(newHuman);
             if (result)
