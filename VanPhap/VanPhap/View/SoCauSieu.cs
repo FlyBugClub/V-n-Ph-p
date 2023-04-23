@@ -16,5 +16,10 @@ namespace VanPhap.View
         {
             InitializeComponent();
         }
+
+        private void SoCauSieu_Load(object sender, EventArgs e)
+        {
+            this.MaximizeBox = false;
+        }
     }
 }

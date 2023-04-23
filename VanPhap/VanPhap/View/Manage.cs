@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Policy;
 using VanPhap.Model;
+using VanPhap.View;
 
 
 
@@ -28,6 +29,8 @@ namespace VanPhap
         {
             //List<ChiTietSo> humans = new VanPhapBUS().GetAll();
             //dgv_list.DataSource = humans;
+            OpentChildForm(new View.SoCauAn(), sender);
+            lbl_Title.Text = "SỚ CẦU AN";
             this.MaximizeBox= false;
         }
 
@@ -199,6 +202,23 @@ namespace VanPhap
         {
             OpentChildForm(new View.SoCauSieu(), sender);
             lbl_Title.Text = "SỚ CẦU SIÊU";
+        }
+
+        private void sơCầuAnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sớCầuAnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoCauAn socauan = new SoCauAn();
+            socauan.Show();
+        }
+
+        private void sớCầuSiêuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoCauSieu socausieu = new SoCauSieu();
+            socausieu.Show();
         }
     } 
 }

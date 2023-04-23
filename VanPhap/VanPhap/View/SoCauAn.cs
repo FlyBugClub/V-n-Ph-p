@@ -20,6 +20,8 @@ namespace VanPhap.View
 
         private void SoCauAn_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+
             List<ChiTietSo> humans = new VanPhapBUS().GetAll();
             dgv_list.DataSource = humans;
         }

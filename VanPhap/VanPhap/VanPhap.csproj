@@ -102,6 +102,9 @@
     <EmbeddedResource Include="View\SoCauAn.resx">
       <DependentUpon>SoCauAn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SoCauSieu.resx">
+      <DependentUpon>SoCauSieu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Model\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
