@@ -30,7 +30,7 @@ namespace VanPhap
 
         public List<ChiTietSo> SelectByKeyword(String keyword)
         {
-            List<ChiTietSo> humans = db.ChiTietSos.Where(b => b.HoTen_Unicode.Contains(keyword)).ToList();
+            List<ChiTietSo> humans = db.ChiTietSos.Where(b => b.HoTen.Contains(keyword)).ToList();
             return humans;
         }
         public bool Insert(ChiTietSo newHuman)
@@ -50,13 +50,13 @@ namespace VanPhap
         public bool Update(ChiTietSo newHuman)
         {
 
-            ChiTietSo dbHuman = db.ChiTietSos.SingleOrDefault(b => b.IDSo == newHuman.ID);
+            ChiTietSo dbHuman = db.ChiTietSos.SingleOrDefault(b => b.IDSo == newHuman.IDD);
 
             if (dbHuman != null)
             {
                 try
                 {
-                    dbHuman.HoTen_Unicode = newHuman.HoTen_Unicode;
+                    dbHuman.HoTen = newHuman.HoTen;
                     
                     db.SubmitChanges();
                     return true;
@@ -67,7 +67,7 @@ namespace VanPhap
         }
         public bool Delete(int humanID)
         {
-            ChiTietSo dbHuman = db.ChiTietSos.SingleOrDefault(b => b.ID== humanID);
+            ChiTietSo dbHuman = db.ChiTietSos.SingleOrDefault(b => b.IDD== humanID);
             if (dbHuman != null)
             {
                 try
