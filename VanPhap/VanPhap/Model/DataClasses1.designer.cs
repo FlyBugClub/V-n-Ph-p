@@ -30,10 +30,13 @@ namespace VanPhap.Model
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertChiTietSo(ChiTietSo instance);
+    partial void UpdateChiTietSo(ChiTietSo instance);
+    partial void DeleteChiTietSo(ChiTietSo instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::VanPhap.Properties.Settings.Default.DataSourceConnectionString, mappingSource)
+				base(global::VanPhap.Properties.Settings.Default.DataSourceConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -730,22 +733,20 @@ namespace VanPhap.Model
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietSo")]
-	public partial class ChiTietSo
+	public partial class ChiTietSo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<double> _ID;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<double> _IDSo;
+		private System.Nullable<int> _IDSo;
 		
-		private System.Nullable<double> _NamNu;
-		
-		private string _NgaySinh;
+		private string _GioiTinh;
 		
 		private System.Nullable<double> _IDNamSinh;
 		
-		private string _HoTen_Unicode;
+		private string _HoTen;
 		
-		private string _PhapDanh_Unicode;
+		private string _PhapDanh;
 		
 		private string _Sao;
 		
@@ -753,28 +754,39 @@ namespace VanPhap.Model
 		
 		private string _Tuoi;
 		
+		private int _IDD;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDSoChanging(System.Nullable<int> value);
+    partial void OnIDSoChanged();
+    partial void OnGioiTinhChanging(string value);
+    partial void OnGioiTinhChanged();
+    partial void OnIDNamSinhChanging(System.Nullable<double> value);
+    partial void OnIDNamSinhChanged();
+    partial void OnHoTenChanging(string value);
+    partial void OnHoTenChanged();
+    partial void OnPhapDanhChanging(string value);
+    partial void OnPhapDanhChanged();
+    partial void OnSaoChanging(string value);
+    partial void OnSaoChanged();
+    partial void OnHanChanging(string value);
+    partial void OnHanChanged();
+    partial void OnTuoiChanging(string value);
+    partial void OnTuoiChanged();
+    partial void OnIDDChanging(int value);
+    partial void OnIDDChanged();
+    #endregion
+		
 		public ChiTietSo()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDSo", DbType="Float")]
-		public System.Nullable<double> IDSo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDSo", DbType="Int")]
+		public System.Nullable<int> IDSo
 		{
 			get
 			{
@@ -784,39 +796,31 @@ namespace VanPhap.Model
 			{
 				if ((this._IDSo != value))
 				{
+					this.OnIDSoChanging(value);
+					this.SendPropertyChanging();
 					this._IDSo = value;
+					this.SendPropertyChanged("IDSo");
+					this.OnIDSoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamNu", DbType="Float")]
-		public System.Nullable<double> NamNu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioiTinh", DbType="NVarChar(10)")]
+		public string GioiTinh
 		{
 			get
 			{
-				return this._NamNu;
+				return this._GioiTinh;
 			}
 			set
 			{
-				if ((this._NamNu != value))
+				if ((this._GioiTinh != value))
 				{
-					this._NamNu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="NVarChar(255)")]
-		public string NgaySinh
-		{
-			get
-			{
-				return this._NgaySinh;
-			}
-			set
-			{
-				if ((this._NgaySinh != value))
-				{
-					this._NgaySinh = value;
+					this.OnGioiTinhChanging(value);
+					this.SendPropertyChanging();
+					this._GioiTinh = value;
+					this.SendPropertyChanged("GioiTinh");
+					this.OnGioiTinhChanged();
 				}
 			}
 		}
@@ -832,39 +836,51 @@ namespace VanPhap.Model
 			{
 				if ((this._IDNamSinh != value))
 				{
+					this.OnIDNamSinhChanging(value);
+					this.SendPropertyChanging();
 					this._IDNamSinh = value;
+					this.SendPropertyChanged("IDNamSinh");
+					this.OnIDNamSinhChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen_Unicode", DbType="NVarChar(255)")]
-		public string HoTen_Unicode
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(255)")]
+		public string HoTen
 		{
 			get
 			{
-				return this._HoTen_Unicode;
+				return this._HoTen;
 			}
 			set
 			{
-				if ((this._HoTen_Unicode != value))
+				if ((this._HoTen != value))
 				{
-					this._HoTen_Unicode = value;
+					this.OnHoTenChanging(value);
+					this.SendPropertyChanging();
+					this._HoTen = value;
+					this.SendPropertyChanged("HoTen");
+					this.OnHoTenChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhapDanh_Unicode", DbType="NVarChar(255)")]
-		public string PhapDanh_Unicode
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhapDanh", DbType="NVarChar(255)")]
+		public string PhapDanh
 		{
 			get
 			{
-				return this._PhapDanh_Unicode;
+				return this._PhapDanh;
 			}
 			set
 			{
-				if ((this._PhapDanh_Unicode != value))
+				if ((this._PhapDanh != value))
 				{
-					this._PhapDanh_Unicode = value;
+					this.OnPhapDanhChanging(value);
+					this.SendPropertyChanging();
+					this._PhapDanh = value;
+					this.SendPropertyChanged("PhapDanh");
+					this.OnPhapDanhChanged();
 				}
 			}
 		}
@@ -880,7 +896,11 @@ namespace VanPhap.Model
 			{
 				if ((this._Sao != value))
 				{
+					this.OnSaoChanging(value);
+					this.SendPropertyChanging();
 					this._Sao = value;
+					this.SendPropertyChanged("Sao");
+					this.OnSaoChanged();
 				}
 			}
 		}
@@ -896,7 +916,11 @@ namespace VanPhap.Model
 			{
 				if ((this._Han != value))
 				{
+					this.OnHanChanging(value);
+					this.SendPropertyChanging();
 					this._Han = value;
+					this.SendPropertyChanged("Han");
+					this.OnHanChanged();
 				}
 			}
 		}
@@ -912,8 +936,52 @@ namespace VanPhap.Model
 			{
 				if ((this._Tuoi != value))
 				{
+					this.OnTuoiChanging(value);
+					this.SendPropertyChanging();
 					this._Tuoi = value;
+					this.SendPropertyChanged("Tuoi");
+					this.OnTuoiChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDD", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IDD
+		{
+			get
+			{
+				return this._IDD;
+			}
+			set
+			{
+				if ((this._IDD != value))
+				{
+					this.OnIDDChanging(value);
+					this.SendPropertyChanging();
+					this._IDD = value;
+					this.SendPropertyChanged("IDD");
+					this.OnIDDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

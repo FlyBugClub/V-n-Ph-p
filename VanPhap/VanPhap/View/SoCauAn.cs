@@ -44,26 +44,65 @@ namespace VanPhap.View
         {
             ChiTietSo newHuman = new ChiTietSo()
             {
-                ID = 0,
-                IDSo = 0,
-                HoTen_Unicode = txt_name.Text.Trim(),
-                PhapDanh_Unicode = txt_nickname.Text.Trim(),
-                NamNu = 0,
-                IDNamSinh = int.Parse(txt_birthday.Text.Trim()),
-                Tuoi = txt_birthday.Text.Trim(),
-                Sao = txt_sao.Text.Trim(),
-                Han = txt_han.Text.Trim(),
 
+                IDSo = 69269, 
+                GioiTinh = "Nam",
+                IDNamSinh = 2002.0,
+                HoTen = "TaMinhDuc",
+                PhapDanh = "TaMinhDuc",
+                Tuoi = "TaMinhDuc",
+                Sao = "TaMinhDuc",
+                Han = "TaMinhDuc",
+                IDD = 16,
             };
             bool result = new VanPhapBUS().AddNew(newHuman);
             if (result)
             {
-                MessageBox.Show("Them thanh cong");
+                List<ChiTietSo> humans = new VanPhapBUS().GetAll();
+                dgv_list.DataSource = humans;
 
 
             }
             else { MessageBox.Show("Xin Lỗi Bạn!"); }
         }
 
+        private void pnl_Form_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void dgv_list_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_list.SelectedRows.Count > 0)
+            {
+                int id = int.Parse(dgv_list.SelectedRows[0].Cells["IDSo"].Value.ToString());
+                ChiTietSo human = new VanPhapBUS().GetDetails(id);
+                if (human != null)
+                {
+                    txt_name.Text = human.HoTen;
+                    txt_nickname.Text = human.PhapDanh;
+                    txt_birthday.Text = human.IDNamSinh.ToString();
+                    txt_tuoi.Text = human.Tuoi;
+                    txt_sao.Text = human.Sao;
+                    txt_han.Text = human.Han;
+                    
+                }
+
+            }
+        }
+
+        private void dgv_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pnl_List_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

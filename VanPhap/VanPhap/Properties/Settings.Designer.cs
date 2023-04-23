@@ -32,5 +32,16 @@ namespace VanPhap.Properties {
                 return ((string)(this["DataSourceConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql.bsite.net\\MSSQL2016;User ID=ngunemay123_db;Password=conchongu0123" +
+            "")]
+        public string DataSourceConnectionString1 {
+            get {
+                return ((string)(this["DataSourceConnectionString1"]));
+            }
+        }
     }
 }
