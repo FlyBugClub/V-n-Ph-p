@@ -82,7 +82,7 @@ namespace VanPhap
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void tabale_List_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -219,6 +219,11 @@ namespace VanPhap
         {
             SoCauSieu socausieu = new SoCauSieu();
             socausieu.Show();
+        }
+
+        private void inSớToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     } 
 }

@@ -39,6 +39,9 @@
             this.lưuLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inSổToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaSổToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sơCầuAnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sớCầuAnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sớCầuSiêuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giúpĐỡToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -52,9 +55,8 @@
             this.pnl_title = new System.Windows.Forms.Panel();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.pnl_Component = new System.Windows.Forms.Panel();
-            this.sơCầuAnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sớCầuAnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sớCầuSiêuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inSớToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoátToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             this.pnl_Menu.SuspendLayout();
             this.pnl_Logo.SuspendLayout();
@@ -72,19 +74,21 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
             this.Menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.Menu.Size = new System.Drawing.Size(1148, 30);
+            this.Menu.Size = new System.Drawing.Size(1148, 25);
             this.Menu.TabIndex = 19;
             this.Menu.Text = "menuStrip1";
             this.Menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.Menu_ItemClicked);
             // 
             // thoátToolStripMenuItem
             // 
+            this.thoátToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inSớToolStripMenuItem,
+            this.thoátToolStripMenuItem1});
             this.thoátToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.thoátToolStripMenuItem.ShowShortcutKeys = false;
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(68, 25);
-            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(75, 21);
+            this.thoátToolStripMenuItem.Text = "Tùy chọn";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // chỉnhSửaToolStripMenuItem
@@ -97,7 +101,7 @@
             this.xóaSổToolStripMenuItem});
             this.chỉnhSửaToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chỉnhSửaToolStripMenuItem.Name = "chỉnhSửaToolStripMenuItem";
-            this.chỉnhSửaToolStripMenuItem.Size = new System.Drawing.Size(101, 25);
+            this.chỉnhSửaToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
             this.chỉnhSửaToolStripMenuItem.Text = "Chỉnh sửa";
             // 
             // thêmToolStripMenuItem
@@ -108,7 +112,7 @@
             this.thêmToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
             this.thêmToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.thêmToolStripMenuItem.Tag = "";
             this.thêmToolStripMenuItem.Text = "Thêm sổ mới";
             this.thêmToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -120,7 +124,7 @@
             this.tìmToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tìmToolStripMenuItem.Name = "tìmToolStripMenuItem";
             this.tìmToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.tìmToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.tìmToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.tìmToolStripMenuItem.Text = "Tìm";
             // 
             // lưuLạiToolStripMenuItem
@@ -128,7 +132,7 @@
             this.lưuLạiToolStripMenuItem.Image = global::VanPhap.Properties.Resources.floppy_icon;
             this.lưuLạiToolStripMenuItem.Name = "lưuLạiToolStripMenuItem";
             this.lưuLạiToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.lưuLạiToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.lưuLạiToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.lưuLạiToolStripMenuItem.Text = "Lưu lại";
             // 
             // inSổToolStripMenuItem
@@ -136,7 +140,7 @@
             this.inSổToolStripMenuItem.Image = global::VanPhap.Properties.Resources.print_icon;
             this.inSổToolStripMenuItem.Name = "inSổToolStripMenuItem";
             this.inSổToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.inSổToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.inSổToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.inSổToolStripMenuItem.Text = "In sổ";
             // 
             // xóaSổToolStripMenuItem
@@ -144,8 +148,33 @@
             this.xóaSổToolStripMenuItem.Image = global::VanPhap.Properties.Resources.delete_icon;
             this.xóaSổToolStripMenuItem.Name = "xóaSổToolStripMenuItem";
             this.xóaSổToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.xóaSổToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.xóaSổToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.xóaSổToolStripMenuItem.Text = "Xóa sổ";
+            // 
+            // sơCầuAnToolStripMenuItem
+            // 
+            this.sơCầuAnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sớCầuAnToolStripMenuItem,
+            this.sớCầuSiêuToolStripMenuItem});
+            this.sơCầuAnToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sơCầuAnToolStripMenuItem.Name = "sơCầuAnToolStripMenuItem";
+            this.sơCầuAnToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
+            this.sơCầuAnToolStripMenuItem.Text = "Sớ cầu";
+            this.sơCầuAnToolStripMenuItem.Click += new System.EventHandler(this.sơCầuAnToolStripMenuItem_Click);
+            // 
+            // sớCầuAnToolStripMenuItem
+            // 
+            this.sớCầuAnToolStripMenuItem.Name = "sớCầuAnToolStripMenuItem";
+            this.sớCầuAnToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.sớCầuAnToolStripMenuItem.Text = "Sớ cầu an";
+            this.sớCầuAnToolStripMenuItem.Click += new System.EventHandler(this.sớCầuAnToolStripMenuItem_Click);
+            // 
+            // sớCầuSiêuToolStripMenuItem
+            // 
+            this.sớCầuSiêuToolStripMenuItem.Name = "sớCầuSiêuToolStripMenuItem";
+            this.sớCầuSiêuToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.sớCầuSiêuToolStripMenuItem.Text = "Sớ cầu siêu";
+            this.sớCầuSiêuToolStripMenuItem.Click += new System.EventHandler(this.sớCầuSiêuToolStripMenuItem_Click);
             // 
             // giúpĐỡToolStripMenuItem
             // 
@@ -153,7 +182,7 @@
             this.hướngDẫnSửDụngToolStripMenuItem});
             this.giúpĐỡToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.giúpĐỡToolStripMenuItem.Name = "giúpĐỡToolStripMenuItem";
-            this.giúpĐỡToolStripMenuItem.Size = new System.Drawing.Size(86, 25);
+            this.giúpĐỡToolStripMenuItem.Size = new System.Drawing.Size(67, 21);
             this.giúpĐỡToolStripMenuItem.Text = "Giúp đỡ";
             // 
             // hướngDẫnSửDụngToolStripMenuItem
@@ -161,7 +190,7 @@
             this.hướngDẫnSửDụngToolStripMenuItem.Image = global::VanPhap.Properties.Resources.guide_icon01;
             this.hướngDẫnSửDụngToolStripMenuItem.Name = "hướngDẫnSửDụngToolStripMenuItem";
             this.hướngDẫnSửDụngToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
             // 
             // imageList1
@@ -194,10 +223,10 @@
             this.pnl_Menu.Controls.Add(this.btn_SoCauAn);
             this.pnl_Menu.Controls.Add(this.pnl_Logo);
             this.pnl_Menu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_Menu.Location = new System.Drawing.Point(0, 30);
+            this.pnl_Menu.Location = new System.Drawing.Point(0, 25);
             this.pnl_Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_Menu.Name = "pnl_Menu";
-            this.pnl_Menu.Size = new System.Drawing.Size(200, 834);
+            this.pnl_Menu.Size = new System.Drawing.Size(200, 839);
             this.pnl_Menu.TabIndex = 31;
             // 
             // btn_SoCauSieu
@@ -252,7 +281,7 @@
             this.label2.Location = new System.Drawing.Point(55, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 63);
+            this.label2.Size = new System.Drawing.Size(55, 51);
             this.label2.TabIndex = 0;
             this.label2.Text = "   ";
             // 
@@ -268,7 +297,7 @@
             this.pnl_title.BackColor = System.Drawing.Color.Gainsboro;
             this.pnl_title.Controls.Add(this.lbl_Title);
             this.pnl_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_title.Location = new System.Drawing.Point(200, 30);
+            this.pnl_title.Location = new System.Drawing.Point(200, 25);
             this.pnl_title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(948, 100);
@@ -282,44 +311,32 @@
             this.lbl_Title.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Title.Location = new System.Drawing.Point(371, 37);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(171, 35);
+            this.lbl_Title.Size = new System.Drawing.Size(135, 26);
             this.lbl_Title.TabIndex = 0;
             this.lbl_Title.Text = "VÂN PHÁP";
             // 
             // pnl_Component
             // 
             this.pnl_Component.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Component.Location = new System.Drawing.Point(200, 130);
+            this.pnl_Component.Location = new System.Drawing.Point(200, 125);
             this.pnl_Component.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_Component.Name = "pnl_Component";
-            this.pnl_Component.Size = new System.Drawing.Size(948, 734);
+            this.pnl_Component.Size = new System.Drawing.Size(948, 739);
             this.pnl_Component.TabIndex = 33;
             this.pnl_Component.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
-            // sơCầuAnToolStripMenuItem
+            // inSớToolStripMenuItem
             // 
-            this.sơCầuAnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sớCầuAnToolStripMenuItem,
-            this.sớCầuSiêuToolStripMenuItem});
-            this.sơCầuAnToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sơCầuAnToolStripMenuItem.Name = "sơCầuAnToolStripMenuItem";
-            this.sơCầuAnToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
-            this.sơCầuAnToolStripMenuItem.Text = "Sớ cầu";
-            this.sơCầuAnToolStripMenuItem.Click += new System.EventHandler(this.sơCầuAnToolStripMenuItem_Click);
+            this.inSớToolStripMenuItem.Name = "inSớToolStripMenuItem";
+            this.inSớToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inSớToolStripMenuItem.Text = "In sớ";
+            this.inSớToolStripMenuItem.Click += new System.EventHandler(this.inSớToolStripMenuItem_Click);
             // 
-            // sớCầuAnToolStripMenuItem
+            // thoátToolStripMenuItem1
             // 
-            this.sớCầuAnToolStripMenuItem.Name = "sớCầuAnToolStripMenuItem";
-            this.sớCầuAnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.sớCầuAnToolStripMenuItem.Text = "Sớ cầu an";
-            this.sớCầuAnToolStripMenuItem.Click += new System.EventHandler(this.sớCầuAnToolStripMenuItem_Click);
-            // 
-            // sớCầuSiêuToolStripMenuItem
-            // 
-            this.sớCầuSiêuToolStripMenuItem.Name = "sớCầuSiêuToolStripMenuItem";
-            this.sớCầuSiêuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.sớCầuSiêuToolStripMenuItem.Text = "Sớ cầu siêu";
-            this.sớCầuSiêuToolStripMenuItem.Click += new System.EventHandler(this.sớCầuSiêuToolStripMenuItem_Click);
+            this.thoátToolStripMenuItem1.Name = "thoátToolStripMenuItem1";
+            this.thoátToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.thoátToolStripMenuItem1.Text = "Thoát";
             // 
             // form_manage
             // 
@@ -333,7 +350,7 @@
             this.Controls.Add(this.Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Menu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "form_manage";
             this.Text = "Quản lý sớ cầu";
             this.Load += new System.EventHandler(this.Form_SoThongTin_Load);
@@ -375,6 +392,8 @@
         private System.Windows.Forms.ToolStripMenuItem sơCầuAnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sớCầuAnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sớCầuSiêuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inSớToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem1;
     }
 }
 

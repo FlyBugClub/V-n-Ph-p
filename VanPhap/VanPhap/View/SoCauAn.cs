@@ -26,41 +26,51 @@ namespace VanPhap.View
             dgv_list.DataSource = humans;
         }
 
-        public int CheckGioiTinh(object sender, EventArgs e)
+        public void CheckGioiTinh()
         {
-            int Check;
             if (rbm_Man.Checked)
             {
-                Check = 1;
+                txt_gioi_tinh.Text = "Nam";
             }
             else if (rbm_Woman.Checked)
             {
-                Check = 2;
+                txt_gioi_tinh.Text = "Nữ";
             }
-            return 0;
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            if (rbm_Man.Checked)
+            {
+                txt_gioi_tinh.Text = "Nam";
+            }
+            else if (rbm_Woman.Checked)
+            {
+                txt_gioi_tinh.Text = "Nữ";
+            }
+            else
+            {
+                MessageBox.Show("Xin Lỗi Bạn!");
+            }
             ChiTietSo newHuman = new ChiTietSo()
             {
-
-                IDSo = 69269, 
-                GioiTinh = "Nam",
-                IDNamSinh = 2002.0,
-                HoTen = "TaMinhDuc",
-                PhapDanh = "TaMinhDuc",
-                Tuoi = "TaMinhDuc",
-                Sao = "TaMinhDuc",
-                Han = "TaMinhDuc",
-                IDD = 16,
+                IDSo = 0,
+                GioiTinh = txt_gioi_tinh.Text.Trim(),
+                IDNamSinh = int.Parse(txt_birthday.Text.Trim()),
+                HoTen = txt_name.Text.Trim(),
+                PhapDanh = txt_nickname.Text.Trim(),
+                Tuoi = txt_tuoi.Text.Trim(),
+                Sao = txt_sao.Text.Trim(),
+                Han = txt_han.Text.Trim(),
+                IDD = 0,
             };
             bool result = new VanPhapBUS().AddNew(newHuman);
             if (result)
             {
                 List<ChiTietSo> humans = new VanPhapBUS().GetAll();
                 dgv_list.DataSource = humans;
-
+                MessageBox.Show("Thêm Thành Công.");
+                clear();
 
             }
             else { MessageBox.Show("Xin Lỗi Bạn!"); }
@@ -84,10 +94,31 @@ namespace VanPhap.View
                     txt_tuoi.Text = human.Tuoi;
                     txt_sao.Text = human.Sao;
                     txt_han.Text = human.Han;
+                    txt_gioi_tinh.Text = human.GioiTinh.ToString();
+                    if (txt_gioi_tinh.Text.Equals("Nam"))
+                    {
+                        rbm_Man.Checked = true;
+                    } else if (txt_gioi_tinh.Text.Equals("Nữ"))
+                    {
+                        rbm_Woman.Checked = true;
+                    }
                     
                 }
 
             }
+        }
+
+        public void clear()
+        {
+            txt_birthday.Text = "";
+            rbm_Man.Checked = true;
+            txt_name.Text = "";
+            txt_nickname.Text = "";
+            txt_luutru.Text = "";
+            txt_han.Text = "";
+            txt_tuoi.Text = "";
+            txt_sao.Text = "";
+
         }
 
         private void dgv_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
