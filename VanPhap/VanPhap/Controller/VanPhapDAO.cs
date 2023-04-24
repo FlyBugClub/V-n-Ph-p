@@ -22,7 +22,7 @@ namespace VanPhap
         }
         public ChiTietSo SelectByID(int ID)
         {
-            ChiTietSo human = db.ChiTietSos.SingleOrDefault(b => b.IDSo == ID);
+            ChiTietSo human = db.ChiTietSos.SingleOrDefault(b => b.ID == ID);
             return human;
         }
 
@@ -50,7 +50,7 @@ namespace VanPhap
         public bool Update(ChiTietSo newHuman)
         {
 
-            ChiTietSo dbHuman = db.ChiTietSos.SingleOrDefault(b => b.IDSo == newHuman.IDD);
+            ChiTietSo dbHuman = db.ChiTietSos.SingleOrDefault(b => b.ID == newHuman.ID);
 
             if (dbHuman != null)
             {
@@ -67,7 +67,7 @@ namespace VanPhap
         }
         public bool Delete(int humanID)
         {
-            ChiTietSo dbHuman = db.ChiTietSos.SingleOrDefault(b => b.IDD== humanID);
+            ChiTietSo dbHuman = db.ChiTietSos.SingleOrDefault(b => b.ID== humanID);
             if (dbHuman != null)
             {
                 try
@@ -81,6 +81,7 @@ namespace VanPhap
             }
             return false;
         }
+        
     }
             
 }

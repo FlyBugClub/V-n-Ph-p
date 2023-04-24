@@ -30,9 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoCauAn));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_namhientai = new System.Windows.Forms.TextBox();
             this.lbl_PhieuDiemThongTin = new System.Windows.Forms.Label();
             this.pnl_Form = new System.Windows.Forms.Panel();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.txt_gioi_tinh = new System.Windows.Forms.TextBox();
             this.txt_birthday = new System.Windows.Forms.TextBox();
             this.lbl_LuuTru = new System.Windows.Forms.Label();
             this.txt_luutru = new System.Windows.Forms.TextBox();
@@ -67,14 +69,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txt_namhientai
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(799, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 32);
-            this.textBox1.TabIndex = 33;
+            this.txt_namhientai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_namhientai.Location = new System.Drawing.Point(799, 11);
+            this.txt_namhientai.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_namhientai.Name = "txt_namhientai";
+            this.txt_namhientai.Size = new System.Drawing.Size(111, 32);
+            this.txt_namhientai.TabIndex = 33;
             // 
             // lbl_PhieuDiemThongTin
             // 
@@ -92,6 +94,8 @@
             // 
             this.pnl_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_Form.Controls.Add(this.txt_id);
+            this.pnl_Form.Controls.Add(this.txt_gioi_tinh);
             this.pnl_Form.Controls.Add(this.txt_birthday);
             this.pnl_Form.Controls.Add(this.lbl_LuuTru);
             this.pnl_Form.Controls.Add(this.txt_luutru);
@@ -120,6 +124,26 @@
             this.pnl_Form.TabIndex = 31;
             this.pnl_Form.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Form_Paint);
             // 
+            // txt_id
+            // 
+            this.txt_id.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.Location = new System.Drawing.Point(366, 20);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(10, 32);
+            this.txt_id.TabIndex = 30;
+            this.txt_id.Visible = false;
+            // 
+            // txt_gioi_tinh
+            // 
+            this.txt_gioi_tinh.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_gioi_tinh.Location = new System.Drawing.Point(135, 100);
+            this.txt_gioi_tinh.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_gioi_tinh.Name = "txt_gioi_tinh";
+            this.txt_gioi_tinh.Size = new System.Drawing.Size(10, 32);
+            this.txt_gioi_tinh.TabIndex = 29;
+            this.txt_gioi_tinh.Visible = false;
+            // 
             // txt_birthday
             // 
             this.txt_birthday.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,6 +152,8 @@
             this.txt_birthday.Name = "txt_birthday";
             this.txt_birthday.Size = new System.Drawing.Size(241, 32);
             this.txt_birthday.TabIndex = 28;
+            this.txt_birthday.TextChanged += new System.EventHandler(this.txt_birthday_TextChanged);
+            this.txt_birthday.Leave += new System.EventHandler(this.txt_namsinh_leave);
             // 
             // lbl_LuuTru
             // 
@@ -164,6 +190,7 @@
             this.btn_find.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_find.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_find.UseVisualStyleBackColor = true;
+            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
             // 
             // imageList1
             // 
@@ -191,12 +218,14 @@
             // rbm_Man
             // 
             this.rbm_Man.AutoSize = true;
+            this.rbm_Man.Checked = true;
             this.rbm_Man.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_Man.Location = new System.Drawing.Point(167, 101);
             this.rbm_Man.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_Man.Name = "rbm_Man";
             this.rbm_Man.Size = new System.Drawing.Size(75, 29);
             this.rbm_Man.TabIndex = 22;
+            this.rbm_Man.TabStop = true;
             this.rbm_Man.Text = "Nam";
             this.rbm_Man.UseVisualStyleBackColor = true;
             // 
@@ -214,6 +243,7 @@
             this.btn_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Delete
             // 
@@ -229,9 +259,11 @@
             this.btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Add
             // 
+            this.btn_Add.FlatAppearance.BorderSize = 0;
             this.btn_Add.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ImageKey = "add-icon.png";
             this.btn_Add.ImageList = this.imageList1;
@@ -331,6 +363,7 @@
             this.txt_tuoi.Location = new System.Drawing.Point(580, 34);
             this.txt_tuoi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_tuoi.Name = "txt_tuoi";
+            this.txt_tuoi.ReadOnly = true;
             this.txt_tuoi.Size = new System.Drawing.Size(269, 32);
             this.txt_tuoi.TabIndex = 14;
             // 
@@ -407,6 +440,7 @@
             this.btn_findIcon.Size = new System.Drawing.Size(45, 33);
             this.btn_findIcon.TabIndex = 27;
             this.btn_findIcon.UseVisualStyleBackColor = true;
+            this.btn_findIcon.Click += new System.EventHandler(this.btn_findIcon_Click);
             // 
             // icon
             // 
@@ -475,7 +509,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 722);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_namhientai);
             this.Controls.Add(this.lbl_PhieuDiemThongTin);
             this.Controls.Add(this.pnl_Form);
             this.Controls.Add(this.pnl_List);
@@ -497,7 +531,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_namhientai;
         private System.Windows.Forms.Label lbl_PhieuDiemThongTin;
         private System.Windows.Forms.Panel pnl_Form;
         private System.Windows.Forms.TextBox txt_birthday;
@@ -529,5 +563,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList icon;
+        private System.Windows.Forms.TextBox txt_gioi_tinh;
+        private System.Windows.Forms.TextBox txt_id;
     }
 }

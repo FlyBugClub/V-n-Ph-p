@@ -39,7 +39,6 @@
             this.Text = "SoCauSieu";
             this.Load += new System.EventHandler(this.SoCauSieu_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion

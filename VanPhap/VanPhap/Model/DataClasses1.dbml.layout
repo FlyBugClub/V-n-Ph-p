@@ -50,10 +50,10 @@
         <elementListCompartment Id="cb68c630-c6d8-46ec-a911-7952f745cbbd" absoluteBounds="9.265, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d878ded8-8547-41de-8821-a9d9ebd83a96" absoluteBounds="0.75, 0.5, 2, 2.5401025390625">
+    <classShape Id="f8ba60bc-156a-46f6-82c4-60f53797ef7a" absoluteBounds="0.625, 0.5, 2, 2.3478011067708335">
       <DataClassMoniker Name="/DataClasses1DataContext/ChiTietSo" />
       <nestedChildShapes>
-        <elementListCompartment Id="4eaef21c-b026-4611-97c3-e948d9a554d5" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8b3865e8-bc96-43c5-9d61-4a895600e341" absoluteBounds="0.64000000000000012, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

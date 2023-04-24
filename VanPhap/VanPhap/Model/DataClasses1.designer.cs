@@ -738,11 +738,9 @@ namespace VanPhap.Model
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<int> _IDSo;
-		
 		private string _GioiTinh;
 		
-		private System.Nullable<double> _IDNamSinh;
+		private System.Nullable<int> _IDNamSinh;
 		
 		private string _HoTen;
 		
@@ -754,17 +752,15 @@ namespace VanPhap.Model
 		
 		private string _Tuoi;
 		
-		private int _IDD;
+		private int _ID;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDSoChanging(System.Nullable<int> value);
-    partial void OnIDSoChanged();
     partial void OnGioiTinhChanging(string value);
     partial void OnGioiTinhChanged();
-    partial void OnIDNamSinhChanging(System.Nullable<double> value);
+    partial void OnIDNamSinhChanging(System.Nullable<int> value);
     partial void OnIDNamSinhChanged();
     partial void OnHoTenChanging(string value);
     partial void OnHoTenChanged();
@@ -776,33 +772,13 @@ namespace VanPhap.Model
     partial void OnHanChanged();
     partial void OnTuoiChanging(string value);
     partial void OnTuoiChanged();
-    partial void OnIDDChanging(int value);
-    partial void OnIDDChanged();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
     #endregion
 		
 		public ChiTietSo()
 		{
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDSo", DbType="Int")]
-		public System.Nullable<int> IDSo
-		{
-			get
-			{
-				return this._IDSo;
-			}
-			set
-			{
-				if ((this._IDSo != value))
-				{
-					this.OnIDSoChanging(value);
-					this.SendPropertyChanging();
-					this._IDSo = value;
-					this.SendPropertyChanged("IDSo");
-					this.OnIDSoChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioiTinh", DbType="NVarChar(10)")]
@@ -825,8 +801,8 @@ namespace VanPhap.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNamSinh", DbType="Float")]
-		public System.Nullable<double> IDNamSinh
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNamSinh", DbType="Int")]
+		public System.Nullable<int> IDNamSinh
 		{
 			get
 			{
@@ -945,22 +921,22 @@ namespace VanPhap.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDD", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IDD
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
 		{
 			get
 			{
-				return this._IDD;
+				return this._ID;
 			}
 			set
 			{
-				if ((this._IDD != value))
+				if ((this._ID != value))
 				{
-					this.OnIDDChanging(value);
+					this.OnIDChanging(value);
 					this.SendPropertyChanging();
-					this._IDD = value;
-					this.SendPropertyChanged("IDD");
-					this.OnIDDChanged();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
 				}
 			}
 		}
