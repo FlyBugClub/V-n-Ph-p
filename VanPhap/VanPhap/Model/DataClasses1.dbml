@@ -63,15 +63,14 @@
   </Table>
   <Table Name="dbo.ChiTietSo" Member="ChiTietSos">
     <Type Name="ChiTietSo">
-      <Column Name="IDSo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="IDNamSinh" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IDNamSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="PhapDanh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Sao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Han" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Tuoi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IDD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

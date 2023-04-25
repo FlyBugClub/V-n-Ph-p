@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using VanPhap.Model;
 
 namespace VanPhap
@@ -47,5 +48,6 @@ namespace VanPhap
             bool result = new VanPhapDAO().Delete(id);
             return result;
         }
+      
     }
 }
