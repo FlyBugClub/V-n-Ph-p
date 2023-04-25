@@ -54,7 +54,7 @@ namespace VanPhap.View
             }
             ChiTietSo newHuman = new ChiTietSo()
             {
-                IDSo = 0,
+                //IDSo = 0,
                 GioiTinh = txt_gioi_tinh.Text.Trim(),
                 IDNamSinh = int.Parse(txt_birthday.Text.Trim()),
                 HoTen = txt_name.Text.Trim(),
@@ -62,7 +62,7 @@ namespace VanPhap.View
                 Tuoi = txt_tuoi.Text.Trim(),
                 Sao = txt_sao.Text.Trim(),
                 Han = txt_han.Text.Trim(),
-                IDD = 0,
+                //IDD = 0,
             };
             bool result = new VanPhapBUS().AddNew(newHuman);
             if (result)

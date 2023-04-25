@@ -152,8 +152,8 @@
             this.txt_birthday.Name = "txt_birthday";
             this.txt_birthday.Size = new System.Drawing.Size(241, 32);
             this.txt_birthday.TabIndex = 28;
-            this.txt_birthday.TextChanged += new System.EventHandler(this.txt_birthday_TextChanged);
-            this.txt_birthday.Leave += new System.EventHandler(this.txt_namsinh_leave);
+            //this.txt_birthday.TextChanged += new System.EventHandler(this.txt_birthday_TextChanged);
+            //this.txt_birthday.Leave += new System.EventHandler(this.txt_namsinh_leave);
             // 
             // lbl_LuuTru
             // 
@@ -190,7 +190,7 @@
             this.btn_find.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_find.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_find.UseVisualStyleBackColor = true;
-            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
+            //this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
             // 
             // imageList1
             // 
@@ -243,7 +243,7 @@
             this.btn_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            //this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Delete
             // 
@@ -259,7 +259,7 @@
             this.btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            //this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Add
             // 
@@ -442,7 +442,7 @@
             this.btn_findIcon.Size = new System.Drawing.Size(45, 33);
             this.btn_findIcon.TabIndex = 27;
             this.btn_findIcon.UseVisualStyleBackColor = true;
-            this.btn_findIcon.Click += new System.EventHandler(this.btn_findIcon_Click);
+            //this.btn_findIcon.Click += new System.EventHandler(this.btn_findIcon_Click);
             // 
             // icon
             // 
