@@ -250,6 +250,8 @@
             this.btn_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            this.btn_Add.MouseLeave += new System.EventHandler(this.btn_Add_MouseLeave);
+            this.btn_Add.MouseHover += new System.EventHandler(this.btn_Add_MouseHover);
             // 
             // txt_han
             // 

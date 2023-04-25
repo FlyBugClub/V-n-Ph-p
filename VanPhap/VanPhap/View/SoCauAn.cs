@@ -135,5 +135,15 @@ namespace VanPhap.View
         {
 
         }
+
+        private void btn_Add_MouseHover(object sender, EventArgs e)
+        {
+            btn_Add.ForeColor = Color.Red;
+        }
+
+        private void btn_Add_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Add.ForeColor =   Color.Black;
+        }
     }
 }
