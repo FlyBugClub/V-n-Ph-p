@@ -21,5 +21,15 @@ namespace VanPhap.View
         {
             this.MaximizeBox = false;
         }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
