@@ -40,40 +40,42 @@ namespace VanPhap.View
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            if (rbm_Man.Checked)
-            {
-                txt_gioi_tinh.Text = "Nam";
-            }
-            else if (rbm_Woman.Checked)
-            {
-                txt_gioi_tinh.Text = "Nữ";
-            }
-            else
-            {
-                MessageBox.Show("Xin Lỗi Bạn!");
-            }
-            ChiTietSo newHuman = new ChiTietSo()
-            {
-                //IDSo = 0,
-                GioiTinh = txt_gioi_tinh.Text.Trim(),
-                IDNamSinh = int.Parse(txt_birthday.Text.Trim()),
-                HoTen = txt_name.Text.Trim(),
-                PhapDanh = txt_nickname.Text.Trim(),
-                Tuoi = txt_tuoi.Text.Trim(),
-                Sao = txt_sao.Text.Trim(),
-                Han = txt_han.Text.Trim(),
-                //IDD = 0,
-            };
-            bool result = new VanPhapBUS().AddNew(newHuman);
-            if (result)
-            {
-                List<ChiTietSo> humans = new VanPhapBUS().GetAll();
-                dgv_list.DataSource = humans;
-                MessageBox.Show("Thêm Thành Công.");
-                clear();
+            NguoiNhanCauAn nnca = new NguoiNhanCauAn();
+            nnca.Show();
+            //if (rbm_Man.Checked)
+            //{
+            //    txt_gioi_tinh.Text = "Nam";
+            //}
+            //else if (rbm_Woman.Checked)
+            //{
+            //    txt_gioi_tinh.Text = "Nữ";
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Xin Lỗi Bạn!");
+            //}
+            //ChiTietSo newHuman = new ChiTietSo()
+            //{
+            //    //IDSo = 0,
+            //    GioiTinh = txt_gioi_tinh.Text.Trim(),
+            //    IDNamSinh = int.Parse(txt_birthday.Text.Trim()),
+            //    HoTen = txt_name.Text.Trim(),
+            //    PhapDanh = txt_nickname.Text.Trim(),
+            //    Tuoi = txt_tuoi.Text.Trim(),
+            //    Sao = txt_sao.Text.Trim(),
+            //    Han = txt_han.Text.Trim(),
+            //    //IDD = 0,
+            //};
+            //bool result = new VanPhapBUS().AddNew(newHuman);
+            //if (result)
+            //{
+            //    List<ChiTietSo> humans = new VanPhapBUS().GetAll();
+            //    dgv_list.DataSource = humans;
+            //    MessageBox.Show("Thêm Thành Công.");
+            //    clear();
 
-            }
-            else { MessageBox.Show("Xin Lỗi Bạn!"); }
+            //}
+            //else { MessageBox.Show("Xin Lỗi Bạn!"); }
         }
 
         private void pnl_Form_Paint(object sender, PaintEventArgs e)
@@ -82,44 +84,41 @@ namespace VanPhap.View
         }
         private void dgv_list_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgv_list.SelectedRows.Count > 0)
-            {
-                int id = int.Parse(dgv_list.SelectedRows[0].Cells["IDSo"].Value.ToString());
-                ChiTietSo human = new VanPhapBUS().GetDetails(id);
-                if (human != null)
-                {
-                    txt_name.Text = human.HoTen;
-                    txt_nickname.Text = human.PhapDanh;
-                    txt_birthday.Text = human.IDNamSinh.ToString();
-                    txt_tuoi.Text = human.Tuoi;
-                    txt_sao.Text = human.Sao;
-                    txt_han.Text = human.Han;
-                    txt_gioi_tinh.Text = human.GioiTinh.ToString();
-                    if (txt_gioi_tinh.Text.Equals("Nam"))
-                    {
-                        rbm_Man.Checked = true;
-                    } else if (txt_gioi_tinh.Text.Equals("Nữ"))
-                    {
-                        rbm_Woman.Checked = true;
-                    }
+            //if (dgv_list.SelectedRows.Count > 0)
+            //{
+            //    int id = int.Parse(dgv_list.SelectedRows[0].Cells["IDSo"].Value.ToString());
+            //    ChiTietSo human = new VanPhapBUS().GetDetails(id);
+            //    if (human != null)
+            //    {
+            //        txt_name.Text = human.HoTen;
+            //        txt_nickname.Text = human.PhapDanh;
+            //        txt_birthday.Text = human.IDNamSinh.ToString();
+            //        txt_gioi_tinh.Text = human.GioiTinh.ToString();
+            //        if (txt_gioi_tinh.Text.Equals("Nam"))
+            //        {
+            //            rbm_Man.Checked = true;
+            //        } else if (txt_gioi_tinh.Text.Equals("Nữ"))
+            //        {
+            //            rbm_Woman.Checked = true;
+            //        }
                     
-                }
+            //    }
 
-            }
+            //}
         }
 
-        public void clear()
-        {
-            txt_birthday.Text = "";
-            rbm_Man.Checked = true;
-            txt_name.Text = "";
-            txt_nickname.Text = "";
-            txt_luutru.Text = "";
-            txt_han.Text = "";
-            txt_tuoi.Text = "";
-            txt_sao.Text = "";
+        //public void clear()
+        //{
+        //    txt_birthday.Text = "";
+        //    rbm_Man.Checked = true;
+        //    txt_name.Text = "";
+        //    txt_nickname.Text = "";
+        //    txt_luutru.Text = "";
+        //    txt_han.Text = "";
+        //    txt_tuoi.Text = "";
+        //    txt_sao.Text = "";
 
-        }
+        //}
 
         private void dgv_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -144,6 +143,29 @@ namespace VanPhap.View
         private void btn_Add_MouseLeave(object sender, EventArgs e)
         {
             btn_Add.ForeColor =   Color.Black;
+        }
+
+        private void radioButton4_Click(object sender, EventArgs e)
+        {
+            SoCauAn sca = new SoCauAn();
+            sca.Show();
+        }
+
+        private void rdbtn_coso_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbtn_chua_Click(object sender, EventArgs e)
+        {
+            ChuBai cb = new ChuBai();
+            cb.Show();
+        }
+
+        private void rdbtn_coso_Click(object sender, EventArgs e)
+        {
+            TimChuBai tcb = new TimChuBai();
+            tcb.Show();
         }
     }
 }

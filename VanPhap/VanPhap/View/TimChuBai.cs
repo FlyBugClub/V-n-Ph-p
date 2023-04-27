@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace VanPhap.View
 {
-    public partial class SoCauSieu : Form
+    public partial class TimChuBai : Form
     {
-        public SoCauSieu()
+        public TimChuBai()
         {
             InitializeComponent();
         }
 
-        private void SoCauSieu_Load(object sender, EventArgs e)
-        {
-            this.MaximizeBox = false;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void pnl_Form_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void btn_Add_Click_1(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

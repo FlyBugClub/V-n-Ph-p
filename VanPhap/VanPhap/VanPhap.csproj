@@ -57,6 +57,18 @@
     </Compile>
     <Compile Include="VanPhap.cs" />
     <Compile Include="View\Acc.cs" />
+    <Compile Include="View\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChuBai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChuBai.Designer.cs">
+      <DependentUpon>ChuBai.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Manage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\NguoiNhanCauAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NguoiNhanCauAn.Designer.cs">
+      <DependentUpon>NguoiNhanCauAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SoCauAn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +101,18 @@
     <Compile Include="View\SoCauSieu.Designer.cs">
       <DependentUpon>SoCauSieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TimChuBai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TimChuBai.Designer.cs">
+      <DependentUpon>TimChuBai.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChuBai.resx">
+      <DependentUpon>ChuBai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,11 +129,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\NguoiNhanCauAn.resx">
+      <DependentUpon>NguoiNhanCauAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SoCauAn.resx">
       <DependentUpon>SoCauAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SoCauSieu.resx">
       <DependentUpon>SoCauSieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TimChuBai.resx">
+      <DependentUpon>TimChuBai.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Model\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

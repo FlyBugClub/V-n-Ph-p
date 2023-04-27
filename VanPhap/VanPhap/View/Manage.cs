@@ -31,6 +31,7 @@ namespace VanPhap
             //dgv_list.DataSource = humans;
             OpentChildForm(new View.SoCauAn(), sender);
             lbl_Title.Text = "SỚ CẦU AN";
+            Btn_Color(btn_SoCauAn, null);
             this.MaximizeBox= false;
         }
 
@@ -196,12 +197,19 @@ namespace VanPhap
         {
             OpentChildForm(new View.SoCauAn(), sender);
             lbl_Title.Text = "SỚ CẦU AN";
+            Btn_Color(btn_SoCauAn,null);
         }
 
         private void btn_SoCauSieu_Click(object sender, EventArgs e)
         {
             OpentChildForm(new View.SoCauSieu(), sender);
             lbl_Title.Text = "SỚ CẦU SIÊU";
+            Btn_Color(btn_SoCauSieu, null);
+        }
+
+        private void btn_account_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void sơCầuAnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,6 +232,28 @@ namespace VanPhap
         private void inSớToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void tìmToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Color(object sender, EventArgs e)
+        {
+            foreach(Control c in pnl_Menu.Controls)
+            {
+                c.BackColor= Color.FromArgb(219, 215, 210);
+            }
+
+            Control click = (Control)sender;
+            click.BackColor = Color.FromArgb(197, 193, 188);
+        }
+
+        private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePassword tk = new ChangePassword();
+            tk.Show();
         }
     } 
 }
