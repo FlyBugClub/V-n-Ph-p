@@ -26,5 +26,10 @@ namespace VanPhap.View
         {
 
         }
+
+        private void btn_huy_bo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
