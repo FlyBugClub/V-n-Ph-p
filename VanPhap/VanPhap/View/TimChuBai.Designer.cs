@@ -29,15 +29,20 @@
         private void InitializeComponent()
         {
             this.pnl_Form = new System.Windows.Forms.Panel();
-            this.txt_birthday = new System.Windows.Forms.TextBox();
+            this.txt_diachi = new System.Windows.Forms.TextBox();
             this.lbl_LuuTru = new System.Windows.Forms.Label();
-            this.txt_luutru = new System.Windows.Forms.TextBox();
+            this.txt_nguyenquan = new System.Windows.Forms.TextBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.lbl_Birthday = new System.Windows.Forms.Label();
             this.lbl_NickName = new System.Windows.Forms.Label();
             this.txt_nickname = new System.Windows.Forms.TextBox();
             this.pnl_List = new System.Windows.Forms.Panel();
+            this.lsv_timchubai = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dgv_list = new System.Windows.Forms.DataGridView();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -46,11 +51,7 @@
             this.btn_huy_bo = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_xem = new System.Windows.Forms.Button();
-            this.lsv_timchubai = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Form.SuspendLayout();
             this.pnl_List.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).BeginInit();
@@ -60,9 +61,9 @@
             // 
             this.pnl_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_Form.Controls.Add(this.txt_birthday);
+            this.pnl_Form.Controls.Add(this.txt_diachi);
             this.pnl_Form.Controls.Add(this.lbl_LuuTru);
-            this.pnl_Form.Controls.Add(this.txt_luutru);
+            this.pnl_Form.Controls.Add(this.txt_nguyenquan);
             this.pnl_Form.Controls.Add(this.lbl_name);
             this.pnl_Form.Controls.Add(this.txt_name);
             this.pnl_Form.Controls.Add(this.lbl_Birthday);
@@ -75,14 +76,14 @@
             this.pnl_Form.TabIndex = 32;
             this.pnl_Form.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Form_Paint);
             // 
-            // txt_birthday
+            // txt_diachi
             // 
-            this.txt_birthday.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_birthday.Location = new System.Drawing.Point(637, 18);
-            this.txt_birthday.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_birthday.Name = "txt_birthday";
-            this.txt_birthday.Size = new System.Drawing.Size(241, 35);
-            this.txt_birthday.TabIndex = 28;
+            this.txt_diachi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_diachi.Location = new System.Drawing.Point(637, 18);
+            this.txt_diachi.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_diachi.Name = "txt_diachi";
+            this.txt_diachi.Size = new System.Drawing.Size(241, 35);
+            this.txt_diachi.TabIndex = 28;
             // 
             // lbl_LuuTru
             // 
@@ -96,14 +97,14 @@
             this.lbl_LuuTru.Text = "Nguyên quán";
             this.lbl_LuuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txt_luutru
+            // txt_nguyenquan
             // 
-            this.txt_luutru.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_luutru.Location = new System.Drawing.Point(637, 62);
-            this.txt_luutru.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_luutru.Name = "txt_luutru";
-            this.txt_luutru.Size = new System.Drawing.Size(241, 35);
-            this.txt_luutru.TabIndex = 27;
+            this.txt_nguyenquan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nguyenquan.Location = new System.Drawing.Point(637, 62);
+            this.txt_nguyenquan.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nguyenquan.Name = "txt_nguyenquan";
+            this.txt_nguyenquan.Size = new System.Drawing.Size(241, 35);
+            this.txt_nguyenquan.TabIndex = 27;
             // 
             // lbl_name
             // 
@@ -177,6 +178,47 @@
             this.pnl_List.Name = "pnl_List";
             this.pnl_List.Size = new System.Drawing.Size(905, 259);
             this.pnl_List.TabIndex = 39;
+            // 
+            // lsv_timchubai
+            // 
+            this.lsv_timchubai.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lsv_timchubai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsv_timchubai.FullRowSelect = true;
+            this.lsv_timchubai.GridLines = true;
+            this.lsv_timchubai.HideSelection = false;
+            this.lsv_timchubai.Location = new System.Drawing.Point(0, 0);
+            this.lsv_timchubai.Name = "lsv_timchubai";
+            this.lsv_timchubai.Size = new System.Drawing.Size(901, 255);
+            this.lsv_timchubai.TabIndex = 22;
+            this.lsv_timchubai.UseCompatibleStateImageBehavior = false;
+            this.lsv_timchubai.View = System.Windows.Forms.View.Details;
+            this.lsv_timchubai.ItemActivate += new System.EventHandler(this.lsv_timchubai_ItemActivate);
+            this.lsv_timchubai.SelectedIndexChanged += new System.EventHandler(this.lsv_timchubai_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 83;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Chủ bái";
+            this.columnHeader2.Width = 143;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Pháp Danh";
+            this.columnHeader3.Width = 132;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Địa chỉ";
+            this.columnHeader4.Width = 328;
             // 
             // dgv_list
             // 
@@ -295,44 +337,10 @@
             this.btn_xem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xem.UseVisualStyleBackColor = true;
             // 
-            // lsv_timchubai
+            // columnHeader5
             // 
-            this.lsv_timchubai.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lsv_timchubai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsv_timchubai.FullRowSelect = true;
-            this.lsv_timchubai.GridLines = true;
-            this.lsv_timchubai.HideSelection = false;
-            this.lsv_timchubai.Location = new System.Drawing.Point(0, 0);
-            this.lsv_timchubai.Name = "lsv_timchubai";
-            this.lsv_timchubai.Size = new System.Drawing.Size(901, 255);
-            this.lsv_timchubai.TabIndex = 22;
-            this.lsv_timchubai.UseCompatibleStateImageBehavior = false;
-            this.lsv_timchubai.View = System.Windows.Forms.View.Details;
-            this.lsv_timchubai.ItemActivate += new System.EventHandler(this.lsv_timchubai_ItemActivate);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 83;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Chủ bái";
-            this.columnHeader2.Width = 290;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Địa chỉ";
-            this.columnHeader3.Width = 276;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Nguyên quán";
-            this.columnHeader4.Width = 571;
+            this.columnHeader5.Text = "Nguyên quán";
+            this.columnHeader5.Width = 153;
             // 
             // TimChuBai
             // 
@@ -360,9 +368,9 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl_Form;
-        private System.Windows.Forms.TextBox txt_birthday;
+        private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.Label lbl_LuuTru;
-        private System.Windows.Forms.TextBox txt_luutru;
+        private System.Windows.Forms.TextBox txt_nguyenquan;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label lbl_Birthday;
@@ -382,5 +390,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

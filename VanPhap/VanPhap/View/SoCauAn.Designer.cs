@@ -62,6 +62,7 @@
             this.txt_nickname = new System.Windows.Forms.TextBox();
             this.rdbtn_chua = new System.Windows.Forms.RadioButton();
             this.rdbtn_coso = new System.Windows.Forms.RadioButton();
+            this.txt_idchubai = new System.Windows.Forms.TextBox();
             this.pnl_List.SuspendLayout();
             this.pnl_Form.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +102,7 @@
             this.pnl_List.Name = "pnl_List";
             this.pnl_List.Size = new System.Drawing.Size(905, 387);
             this.pnl_List.TabIndex = 32;
-            this.pnl_List.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_List_Paint);
+            
             // 
             // lsv_danhsach_cauan
             // 
@@ -167,7 +168,7 @@
             this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ImageIndex = 2;
             this.btn_Delete.ImageList = this.imageList1;
-            this.btn_Delete.Location = new System.Drawing.Point(578, 245);
+            this.btn_Delete.Location = new System.Drawing.Point(811, 234);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(100, 42);
@@ -184,7 +185,7 @@
             this.btn_Add.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ImageKey = "add-icon.png";
             this.btn_Add.ImageList = this.imageList1;
-            this.btn_Add.Location = new System.Drawing.Point(290, 245);
+            this.btn_Add.Location = new System.Drawing.Point(579, 234);
             this.btn_Add.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(100, 42);
@@ -203,7 +204,7 @@
             this.btn_Update.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Update.ImageIndex = 1;
             this.btn_Update.ImageList = this.imageList1;
-            this.btn_Update.Location = new System.Drawing.Point(416, 240);
+            this.btn_Update.Location = new System.Drawing.Point(692, 234);
             this.btn_Update.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(100, 42);
@@ -240,6 +241,7 @@
             // 
             this.pnl_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_Form.Controls.Add(this.txt_idchubai);
             this.pnl_Form.Controls.Add(this.txt_id);
             this.pnl_Form.Controls.Add(this.txt_gioi_tinh);
             this.pnl_Form.Controls.Add(this.txt_diachi);
@@ -258,7 +260,7 @@
             this.pnl_Form.Name = "pnl_Form";
             this.pnl_Form.Size = new System.Drawing.Size(905, 178);
             this.pnl_Form.TabIndex = 31;
-            this.pnl_Form.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Form_Paint);
+           
             // 
             // txt_id
             // 
@@ -355,7 +357,7 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(148, 20);
+            this.txt_name.Location = new System.Drawing.Point(148, 18);
             this.txt_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(239, 35);
@@ -434,6 +436,15 @@
             this.rdbtn_coso.CheckedChanged += new System.EventHandler(this.rdbtn_coso_CheckedChanged);
             this.rdbtn_coso.Click += new System.EventHandler(this.rdbtn_coso_Click);
             // 
+            // txt_idchubai
+            // 
+            this.txt_idchubai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idchubai.Location = new System.Drawing.Point(628, 113);
+            this.txt_idchubai.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_idchubai.Name = "txt_idchubai";
+            this.txt_idchubai.Size = new System.Drawing.Size(241, 35);
+            this.txt_idchubai.TabIndex = 31;
+            // 
             // SoCauAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -494,5 +505,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.TextBox txt_idchubai;
     }
 }

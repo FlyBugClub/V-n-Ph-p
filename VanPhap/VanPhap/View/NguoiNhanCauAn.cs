@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,28 @@ namespace VanPhap.View
 {
     public partial class NguoiNhanCauAn : Form
     {
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\V-n-Ph-p\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        OleDbConnection sqlCon = null;
+        //Hàm mở kết nối db
+        public void OpenConection()
+        {
+            if (sqlCon == null)
+            {
+                sqlCon = new OleDbConnection(strCon);
+            }
+            if (sqlCon.State == System.Data.ConnectionState.Closed)
+            {
+                sqlCon.Open();
+            }
+
+        }
+        public void CloseConection()
+        {
+            if (sqlCon.State == ConnectionState.Open && sqlCon != null)
+            {
+                sqlCon.Close();
+            }
+        }
         public NguoiNhanCauAn()
         {
             InitializeComponent();
@@ -276,11 +299,10 @@ namespace VanPhap.View
 
 
         }
-
+        public string DataFromForm1 { get; set; }
         private void NguoiNhanCauAn_Load(object sender, EventArgs e)
         {
-           
-        }
+            txt_id.Text = DataFromForm1;        }
 
         private void txt_birthday_TextChanged(object sender, EventArgs e)
         {
@@ -290,6 +312,89 @@ namespace VanPhap.View
         private void txt_gioi_tinh_1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            if (txt_gioi_tinh_1.Text.Equals("Nam"))
+            {
+                txt_gioi_tinh_1.Text = "1";
+            }
+            else
+            {
+                txt_gioi_tinh_1.Text = "2";
+            }
+            using (OleDbConnection connection = new OleDbConnection(strCon))
+            {
+
+                try
+                {
+                    // Mở kết nối
+                    connection.Open();
+                   
+
+
+
+                    // Tạo câu lệnh INSERT
+                    string query = "INSERT INTO tblChiTietSo (IDSo, NamNu, NamSinh, AmLich , Sao, Han , HoTenUni,  PhapDanhUni)  VALUES (?,?,?,?,?,?,?,?)";
+
+                    double iddd = double.Parse(txt_id.Text);
+                    
+                    double namnu = double.Parse(txt_gioi_tinh_1.Text);
+                    double namsinh = double.Parse(txt_birthday.Text);
+                    string amlich = txt_tuoi.Text;
+                    string sao = txt_sao.Text;
+                    string han = txt_han.Text;
+                    string hoten = txt_name.Text;
+                    string phapdanh = txt_nickname.Text;
+                    // Tạo đối tượng Command và liên kết với Connection
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+
+                     
+
+                    {
+                        // Gán giá trị cho các tham số trong câu lệnh INSERT
+                        command.Parameters.AddWithValue("?", iddd);
+                        command.Parameters.AddWithValue("?", namnu);
+                        command.Parameters.AddWithValue("?", namsinh);
+                        command.Parameters.AddWithValue("?", amlich);
+                        command.Parameters.AddWithValue("?", sao);
+                        command.Parameters.AddWithValue("?", han);
+                        command.Parameters.AddWithValue("?", hoten);
+                        command.Parameters.AddWithValue("?", phapdanh);
+
+
+                        // Thực thi câu lệnh INSERT
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Kiểm tra số dòng bị ảnh hưởng
+                        if (rowsAffected > 0)
+                        {
+
+                            MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
+
+                        }
+                    }
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show("Lỗi khi thêm dữ liệu vào cơ sở dữ liệu: " + ex.Message);
+                }
+            }
+        }
+
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string id = txt_id.Text;
         }
     }
 }

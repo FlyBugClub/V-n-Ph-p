@@ -60,6 +60,9 @@ namespace VanPhap.View
         {
             lsv_timchubai.Items.Clear();
             string name = txt_name.Text;
+            string diachi1 = txt_diachi.Text;
+            string nguyenquan1 = txt_nguyenquan.Text;
+            string phapdanh1 = txt_nickname.Text;
 
             OpenConection();
 
@@ -67,7 +70,9 @@ namespace VanPhap.View
 
             OleDbCommand sqlCmd = new OleDbCommand();
             sqlCmd.CommandType = System.Data.CommandType.Text;
-            sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
+            
+            //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
+            sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%" + name + "%'  AND DiaChiUni LIKE '%" + diachi1 + "%' AND NguyenQuanUni LIKE '%" + nguyenquan1 + "%' AND PhapDanhUni LIKE '%" + phapdanh1 + "%' ";
             sqlCmd.Connection = sqlCon;
 
             OleDbDataReader reader = sqlCmd.ExecuteReader();
@@ -112,17 +117,18 @@ namespace VanPhap.View
                 ListViewItem activatedItem = lsv_timchubai.SelectedItems[0];
 
                 //Hiển thị thông tin từ item vào TextBox
-             
-                List<string> info = new List<string>();
-
-                
-
-                info.Add(activatedItem.SubItems[1].Text);
-                info.Add(activatedItem.SubItems[2].Text);
-                info.Add(activatedItem.SubItems[3].Text);
+                string id = activatedItem.SubItems[0].Text;
+                string chubai  = activatedItem.SubItems[1].Text;
+                string phapdanh = activatedItem.SubItems[2].Text;
+                string diachi = activatedItem.SubItems[3].Text;
+                string nguyenquan = activatedItem.SubItems[4].Text;
 
                 SoCauAn form2 = new SoCauAn();
-                form2.DataFromTimChuBai = info;
+                form2.id = id;
+                form2.chubai = chubai;
+                form2.phapdanh = phapdanh;
+                form2.diachi = diachi;
+                form2.nguyenquan = nguyenquan;
 
                 // Hiển thị Form 2
                 form2.Show();
@@ -131,6 +137,11 @@ namespace VanPhap.View
         }
 
         private void lbl_Birthday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsv_timchubai_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

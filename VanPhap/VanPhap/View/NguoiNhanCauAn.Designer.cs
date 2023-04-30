@@ -53,23 +53,23 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_Add = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_id
             // 
             this.txt_id.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.Location = new System.Drawing.Point(397, 26);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_id.Location = new System.Drawing.Point(578, 199);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(9, 35);
+            this.txt_id.Size = new System.Drawing.Size(116, 35);
             this.txt_id.TabIndex = 30;
-            this.txt_id.Visible = false;
             // 
             // txt_gioi_tinh_1
             // 
             this.txt_gioi_tinh_1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_gioi_tinh_1.Location = new System.Drawing.Point(380, 108);
-            this.txt_gioi_tinh_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_gioi_tinh_1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_gioi_tinh_1.Name = "txt_gioi_tinh_1";
             this.txt_gioi_tinh_1.Size = new System.Drawing.Size(61, 35);
             this.txt_gioi_tinh_1.TabIndex = 29;
@@ -80,7 +80,7 @@
             // 
             this.txt_birthday.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_birthday.Location = new System.Drawing.Point(175, 156);
-            this.txt_birthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_birthday.Margin = new System.Windows.Forms.Padding(4);
             this.txt_birthday.Name = "txt_birthday";
             this.txt_birthday.Size = new System.Drawing.Size(241, 35);
             this.txt_birthday.TabIndex = 28;
@@ -103,7 +103,7 @@
             // 
             this.txt_luutru.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_luutru.Location = new System.Drawing.Point(175, 199);
-            this.txt_luutru.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_luutru.Margin = new System.Windows.Forms.Padding(4);
             this.txt_luutru.Name = "txt_luutru";
             this.txt_luutru.Size = new System.Drawing.Size(241, 35);
             this.txt_luutru.TabIndex = 27;
@@ -113,7 +113,7 @@
             this.rbm_Nu.AutoSize = true;
             this.rbm_Nu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_Nu.Location = new System.Drawing.Point(309, 112);
-            this.rbm_Nu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbm_Nu.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_Nu.Name = "rbm_Nu";
             this.rbm_Nu.Size = new System.Drawing.Size(63, 31);
             this.rbm_Nu.TabIndex = 24;
@@ -126,7 +126,7 @@
             this.rbm_Nam.Checked = true;
             this.rbm_Nam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_Nam.Location = new System.Drawing.Point(207, 112);
-            this.rbm_Nam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbm_Nam.Margin = new System.Windows.Forms.Padding(4);
             this.rbm_Nam.Name = "rbm_Nam";
             this.rbm_Nam.Size = new System.Drawing.Size(79, 31);
             this.rbm_Nam.TabIndex = 22;
@@ -138,7 +138,7 @@
             // 
             this.txt_han.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_han.Location = new System.Drawing.Point(591, 113);
-            this.txt_han.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_han.Margin = new System.Windows.Forms.Padding(4);
             this.txt_han.Name = "txt_han";
             this.txt_han.ReadOnly = true;
             this.txt_han.Size = new System.Drawing.Size(269, 35);
@@ -173,17 +173,18 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(175, 26);
-            this.txt_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_name.Location = new System.Drawing.Point(177, 26);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(239, 35);
             this.txt_name.TabIndex = 3;
+            this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // txt_sao
             // 
             this.txt_sao.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sao.Location = new System.Drawing.Point(591, 71);
-            this.txt_sao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_sao.Margin = new System.Windows.Forms.Padding(4);
             this.txt_sao.Name = "txt_sao";
             this.txt_sao.ReadOnly = true;
             this.txt_sao.Size = new System.Drawing.Size(269, 35);
@@ -217,7 +218,7 @@
             // 
             this.txt_tuoi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tuoi.Location = new System.Drawing.Point(591, 26);
-            this.txt_tuoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_tuoi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_tuoi.Name = "txt_tuoi";
             this.txt_tuoi.ReadOnly = true;
             this.txt_tuoi.Size = new System.Drawing.Size(269, 35);
@@ -264,7 +265,7 @@
             // 
             this.txt_nickname.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nickname.Location = new System.Drawing.Point(175, 68);
-            this.txt_nickname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nickname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(241, 35);
             this.txt_nickname.TabIndex = 10;
@@ -285,7 +286,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(175, 242);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(241, 35);
             this.textBox1.TabIndex = 32;
@@ -317,12 +318,32 @@
             this.btn_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageKey = "add-icon.png";
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(578, 247);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 42);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Thêm";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NguoiNhanCauAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 310);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.lbl_nguyen_quan);
             this.Controls.Add(this.textBox1);
@@ -345,7 +366,7 @@
             this.Controls.Add(this.lbl_sex);
             this.Controls.Add(this.bl_Han);
             this.Controls.Add(this.txt_sao);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NguoiNhanCauAn";
             this.Text = "Người nhận cầu an";
             this.Load += new System.EventHandler(this.NguoiNhanCauAn_Load);
@@ -378,5 +399,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button button1;
     }
 }

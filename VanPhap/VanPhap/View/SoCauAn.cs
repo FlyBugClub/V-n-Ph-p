@@ -37,7 +37,11 @@ namespace VanPhap.View
                 sqlCon.Close();
             }
         }
-        public List<string> DataFromTimChuBai { get; set; }
+        public string id { get; set; }
+        public string chubai { get; set; }
+        public string phapdanh { get; set; }
+        public string diachi { get; set; }
+        public string nguyenquan { get; set; }
 
         public SoCauAn()
         {
@@ -47,21 +51,15 @@ namespace VanPhap.View
         private void SoCauAn_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
-            List<String> info = new List<String>();
+            txt_idchubai.Text = id;
+            txt_name.Text = chubai;
+            txt_nickname.Text = phapdanh;
+            txt_diachi.Text = diachi;
+            txt_luutru.Text = nguyenquan;
+
+
 
             
-            Console.WriteLine(DataFromTimChuBai);
-            
-            info = DataFromTimChuBai;
-            info.Add("sug");
-            txt_name.Text = info[0];
-            txt_nickname.Text = info[1];
-            txt_diachi.Text = info[2];
-            txt_luutru.Text = info[3];
-
-
-
-            HienDanhSachVatTu();
 
         }
         public void HienDanhSachVatTu()
@@ -150,46 +148,20 @@ namespace VanPhap.View
         {
             NguoiNhanCauAn nnca = new NguoiNhanCauAn();
             nnca.Show();
-            //if (rbm_Man.Checked)
-            //{
-            //    txt_gioi_tinh.Text = "Nam";
-            //}
-            //else if (rbm_Woman.Checked)
-            //{
-            //    txt_gioi_tinh.Text = "Nữ";
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Xin Lỗi Bạn!");
-            //}
-            //ChiTietSo newHuman = new ChiTietSo()
-            //{
-            //    //IDSo = 0,
-            //    GioiTinh = txt_gioi_tinh.Text.Trim(),
-            //    IDNamSinh = int.Parse(txt_birthday.Text.Trim()),
-            //    HoTen = txt_name.Text.Trim(),
-            //    PhapDanh = txt_nickname.Text.Trim(),
-            //    Tuoi = txt_tuoi.Text.Trim(),
-            //    Sao = txt_sao.Text.Trim(),
-            //    Han = txt_han.Text.Trim(),
-            //    //IDD = 0,
-            //};
-            //bool result = new VanPhapBUS().AddNew(newHuman);
-            //if (result)
-            //{
-            //    List<ChiTietSo> humans = new VanPhapBUS().GetAll();
-            //    dgv_list.DataSource = humans;
-            //    MessageBox.Show("Thêm Thành Công.");
-            //    clear();
 
-            //}
-            //else { MessageBox.Show("Xin Lỗi Bạn!"); }
-        }
+            //Hiển thị thông tin từ item vào TextBox
+            string id = txt_idchubai.Text;
+            
 
-        private void pnl_Form_Paint(object sender, PaintEventArgs e)
-        {
+            NguoiNhanCauAn formNguoiNhan = new NguoiNhanCauAn();
+            formNguoiNhan.DataFromForm1 = id;
+
 
         }
+
+    
+
+        
         private void dgv_list_SelectionChanged(object sender, EventArgs e)
         {
             //if (dgv_list.SelectedRows.Count > 0)
