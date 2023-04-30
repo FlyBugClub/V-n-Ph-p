@@ -53,3 +53,4 @@ C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.View.ChangePassword.resources
 C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.View.ChuBai.resources
 C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.View.NguoiNhanCauAn.resources
 C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.View.TimChuBai.resources
+C:\Git\V-n-Ph-p\VanPhap\VanPhap\bin\Debug\Demo.mdb

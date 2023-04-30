@@ -47,6 +47,7 @@ namespace VanPhap.View
             {
                 txt_gioi_tinh_1.Text = "Nữ";
             }
+            
             // Xác định sao
             string[] saoNam = { "La Hầu", "Thổ Tú", "Thủy Diệu", "Thái Bạch", "Thái Dương", "Vân Hớn", "Kế Đô", "Thái Âm", "Mộc Đức" };
             string[] saoNu = { "Kế Đô", "Vân Hớn", "Mộng Đức", "Thái Âm", "Thổ Tú", "La Hầu", "Thái Dương", "Thái Bạch", "Thủy Diệu" };
@@ -59,6 +60,7 @@ namespace VanPhap.View
             int saoIndex = current_year - year;
             if (txt_gioi_tinh_1.Text.Equals("Nữ"))
             {
+
                 int tuoiIndex = current_year - year+1;
                 txt_name.Text = tuoiIndex.ToString();
                 switch (tuoiIndex)

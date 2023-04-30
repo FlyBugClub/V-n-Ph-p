@@ -2,17 +2,43 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VanPhap.Model;
+using VanPhap.Controller;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VanPhap.View
 {
     public partial class SoCauAn : Form
     {
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\V-n-Ph-p\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        OleDbConnection sqlCon = null;
+        //Hàm mở kết nối db
+        public void OpenConection()
+        {
+            if (sqlCon == null)
+            {
+                sqlCon = new OleDbConnection(strCon);
+            }
+            if (sqlCon.State == System.Data.ConnectionState.Closed)
+            {
+                sqlCon.Open();
+            }
+
+        }
+        public void CloseConection()
+        {
+            if(sqlCon.State == ConnectionState.Open && sqlCon != null)
+            {
+                sqlCon.Close();
+            }
+        }
+        public List<string> DataFromTimChuBai { get; set; }
+
         public SoCauAn()
         {
             InitializeComponent();
@@ -21,12 +47,94 @@ namespace VanPhap.View
         private void SoCauAn_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
+            List<String> info = new List<String>();
 
-            List<ChiTietSo> humans = new VanPhapBUS().GetAll();
-            dgv_list.DataSource = humans;
+            
+            Console.WriteLine(DataFromTimChuBai);
+            
+            info = DataFromTimChuBai;
+            info.Add("sug");
+            txt_name.Text = info[0];
+            txt_nickname.Text = info[1];
+            txt_diachi.Text = info[2];
+            txt_luutru.Text = info[3];
+
+
+
+            HienDanhSachVatTu();
+
+        }
+        public void HienDanhSachVatTu()
+        {
+            /*using (OleDbConnection connection = new OleDbConnection(strCon))
+            {
+                connection.Open();
+
+                // Thực hiện truy vấn SQL để lấy dữ liệu từ bảng
+                string sqlQuery = "SELECT * FROM tblChiTietSo";
+                using (OleDbCommand command = new OleDbCommand(sqlQuery, connection))
+                {
+                    // Thực hiện truy vấn và nhận dữ liệu bằng OleDbDataReader
+                    using (OleDbDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Lấy giá trị của cột "shortTextField"
+                            string shortText = reader.GetString(10);
+
+                            // Sử dụng giá trị shortText theo nhu cầu của bạn
+                            ListViewItem lvi = new ListViewItem(shortText);
+                            
+                            lsv_danhsach_cauan.Items.Add(lvi);
+
+                        }
+                    }
+                }
+            }*/
+            OpenConection();
+
+
+
+            OleDbCommand sqlCmd = new OleDbCommand();
+            sqlCmd.CommandType = System.Data.CommandType.Text;
+            sqlCmd.CommandText = "SELECT TOP 5 ID FROM tblphattu ORDER BY ID DESC";
+            sqlCmd.Connection = sqlCon;
+
+            OleDbDataReader reader = sqlCmd.ExecuteReader();
+
+            
+
+            while (reader.Read())
+            {
+
+                //*double idSo = reader.GetDouble(1);*//*
+                double hoten = reader.GetDouble(0);
+                /*string phapdanh = reader.GetString(11);
+                double gioitinh = reader.GetDouble(4);
+                double namsinh = reader.GetDouble(6);
+               // string tuoiam = reader.GetString(7);
+                string sao = reader.GetString(8);
+                string han = reader.GetString(9);*/
+
+
+
+
+                ListViewItem lvi = new ListViewItem(hoten.ToString());
+                /*lvi.SubItems.Add(hoten);
+                lvi.SubItems.Add(phapdanh);
+                lvi.SubItems.Add(gioitinh.ToString());
+                lvi.SubItems.Add(namsinh.ToString());
+                //lvi.SubItems.Add(tuoiam);
+                lvi.SubItems.Add(sao);
+                lvi.SubItems.Add(han);*/
+                
+
+                lsv_danhsach_cauan.Items.Add(lvi);
+
+            }
         }
 
-        public void CheckGioiTinh()
+            public void CheckGioiTinh()
         {
             if (rbm_Man.Checked)
             {
@@ -166,6 +274,36 @@ namespace VanPhap.View
         {
             TimChuBai tcb = new TimChuBai();
             tcb.Show();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbtn_chua_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_gioi_tinh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nickname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_diachi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_luutru_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
