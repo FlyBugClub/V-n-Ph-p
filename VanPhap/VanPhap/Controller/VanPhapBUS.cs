@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using VanPhap.Model;
+
 
 namespace VanPhap
 {
-    internal class VanPhapBUS
+    /*internal class VanPhapBUS
     {
         public List<ChiTietSo> GetAll()
         {
@@ -49,5 +49,5 @@ namespace VanPhap
             return result;
         }
       
-    }
+    }*/
 }

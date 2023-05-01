@@ -2,29 +2,119 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VanPhap.Model;
+using VanPhap.Controller;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ListView = System.Windows.Forms.ListView;
 
 namespace VanPhap.View
 {
     public partial class SoCauAn : Form
     {
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\V-n-Ph-p\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        OleDbConnection sqlCon = null;
+        //Hàm mở kết nối db
+        public void OpenConection()
+        {
+            if (sqlCon == null)
+            {
+                sqlCon = new OleDbConnection(strCon);
+            }
+            if (sqlCon.State == System.Data.ConnectionState.Closed)
+            {
+                sqlCon.Open();
+            }
+
+        }
+        public void CloseConection()
+        {
+            if (sqlCon.State == ConnectionState.Open && sqlCon != null)
+            {
+                sqlCon.Close();
+            }
+        }
+        public string id { get; set; }
+        public string chubai { get; set; }
+        public string phapdanh { get; set; }
+        public string diachi { get; set; }
+        public string nguyenquan { get; set; }
+
         public SoCauAn()
         {
             InitializeComponent();
+            myListView = lsv_danhsach_cauan;
         }
 
+        
+        public ListView myListView;
+        
         private void SoCauAn_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
-
-            List<ChiTietSo> humans = new VanPhapBUS().GetAll();
-            dgv_list.DataSource = humans;
+            lsv_danhsach_cauan.Items.Clear();
+            HienDanhSach();
+            
+            
         }
+        public void HienDanhSach()
+        {
+            lsv_danhsach_cauan.Items.Clear();
+
+            txt_idchubai.Text = id;
+            txt_name.Text = chubai;
+            txt_nickname.Text = phapdanh;
+            txt_diachi.Text = diachi;
+            txt_luutru.Text = nguyenquan;
+
+            string idso = txt_idchubai.Text;
+            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso";
+            //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
+
+
+            using (OleDbConnection connection = new OleDbConnection(strCon))
+            {
+                OleDbCommand command = new OleDbCommand(query, connection);
+                command.Parameters.AddWithValue("@idso", idso); // Truyền giá trị vào tham số @param
+                connection.Open();
+
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        /*string hoten = reader.GetString(0);
+                        string phapdanh1 = reader.GetString(1);
+                        double gioitinh = reader.GetDouble(2);
+                        double namsinh = reader.GetDouble(3);
+                        string amlich = reader.GetString(4);
+                        string sao = reader.GetString(5);
+                        string han = reader.GetString(6);*/
+
+                        ListViewItem lvi = new ListViewItem(reader["HoTenUni"].ToString());
+                        
+                        
+                        lvi.SubItems.Add(reader["PhapDanhUni"].ToString());
+                        lvi.SubItems.Add(reader["NamNu"].ToString());
+                        lvi.SubItems.Add(reader["NamSinh"].ToString());
+                        lvi.SubItems.Add(reader["AmLich"].ToString());
+                        lvi.SubItems.Add(reader["Sao"].ToString());
+                        lvi.SubItems.Add(reader["Han"].ToString());
+                        lvi.SubItems.Add(reader["ID"].ToString());
+                        lvi.SubItems.Add(reader["IDSo"].ToString());
+
+
+                        lsv_danhsach_cauan.Items.Add(lvi);
+                    }
+
+
+                }
+            }
+        }
+
 
         public void CheckGioiTinh()
         {
@@ -40,72 +130,31 @@ namespace VanPhap.View
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            NguoiNhanCauAn nnca = new NguoiNhanCauAn();
-            nnca.Show();
-            //if (rbm_Man.Checked)
-            //{
-            //    txt_gioi_tinh.Text = "Nam";
-            //}
-            //else if (rbm_Woman.Checked)
-            //{
-            //    txt_gioi_tinh.Text = "Nữ";
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Xin Lỗi Bạn!");
-            //}
-            //ChiTietSo newHuman = new ChiTietSo()
-            //{
-            //    //IDSo = 0,
-            //    GioiTinh = txt_gioi_tinh.Text.Trim(),
-            //    IDNamSinh = int.Parse(txt_birthday.Text.Trim()),
-            //    HoTen = txt_name.Text.Trim(),
-            //    PhapDanh = txt_nickname.Text.Trim(),
-            //    Tuoi = txt_tuoi.Text.Trim(),
-            //    Sao = txt_sao.Text.Trim(),
-            //    Han = txt_han.Text.Trim(),
-            //    //IDD = 0,
-            //};
-            //bool result = new VanPhapBUS().AddNew(newHuman);
-            //if (result)
-            //{
-            //    List<ChiTietSo> humans = new VanPhapBUS().GetAll();
-            //    dgv_list.DataSource = humans;
-            //    MessageBox.Show("Thêm Thành Công.");
-            //    clear();
 
-            //}
-            //else { MessageBox.Show("Xin Lỗi Bạn!"); }
-        }
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+                
+            }
+            else
+            {
+                //Hiển thị thông tin từ item vào TextBox
+                string id = txt_idchubai.Text;
 
-        private void pnl_Form_Paint(object sender, PaintEventArgs e)
-        {
+
+                NguoiNhanCauAn formNguoiNhan = new NguoiNhanCauAn();
+                formNguoiNhan.DataFromForm11 = id;
+                formNguoiNhan.Show();
+            }
+            
+
 
         }
-        private void dgv_list_SelectionChanged(object sender, EventArgs e)
-        {
-            //if (dgv_list.SelectedRows.Count > 0)
-            //{
-            //    int id = int.Parse(dgv_list.SelectedRows[0].Cells["IDSo"].Value.ToString());
-            //    ChiTietSo human = new VanPhapBUS().GetDetails(id);
-            //    if (human != null)
-            //    {
-            //        txt_name.Text = human.HoTen;
-            //        txt_nickname.Text = human.PhapDanh;
-            //        txt_birthday.Text = human.IDNamSinh.ToString();
-            //        txt_gioi_tinh.Text = human.GioiTinh.ToString();
-            //        if (txt_gioi_tinh.Text.Equals("Nam"))
-            //        {
-            //            rbm_Man.Checked = true;
-            //        } else if (txt_gioi_tinh.Text.Equals("Nữ"))
-            //        {
-            //            rbm_Woman.Checked = true;
-            //        }
-                    
-            //    }
 
-            //}
-        }
+
+
+
+        
 
         //public void clear()
         //{
@@ -142,7 +191,7 @@ namespace VanPhap.View
 
         private void btn_Add_MouseLeave(object sender, EventArgs e)
         {
-            btn_Add.ForeColor =   Color.Black;
+            btn_Add.ForeColor = Color.Black;
         }
 
         private void radioButton4_Click(object sender, EventArgs e)
@@ -166,6 +215,118 @@ namespace VanPhap.View
         {
             TimChuBai tcb = new TimChuBai();
             tcb.Show();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbtn_chua_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_gioi_tinh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nickname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_diachi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_luutru_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+            }
+            else
+            {
+                lsv_danhsach_cauan.Items.Clear();
+                HienDanhSach();
+            }
+            
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+
+            }
+            else
+            {
+                if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+                {
+                    // Lấy giá trị khóa chính từ dòng đang chọn
+
+                    string id = lsv_danhsach_cauan.SelectedItems[0].SubItems[7].Text; // Giả sử khóa chính ở cột đầu tiên
+                    string idso = lsv_danhsach_cauan.SelectedItems[0].SubItems[8].Text;
+
+                    using (OleDbConnection connection = new OleDbConnection(strCon))
+                    {
+                        connection.Open();
+
+
+                        // Thực hiện câu lệnh DELETE
+                        string query = "DELETE FROM tblchitietso WHERE id = @id AND idso = @idso";
+
+                        using (OleDbCommand command = new OleDbCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@id", id);
+                            command.Parameters.AddWithValue("@idso", idso);
+                            command.ExecuteNonQuery();
+                        }
+                        if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+                        {
+                            // Xóa thành công
+                            MessageBox.Show("Xóa thành công");
+                            HienDanhSach();
+                        }
+                        else
+                        {
+                            // Không có dòng nào được xóa
+                            MessageBox.Show("Không có dòng nào được xóa");
+                        }
+                    }
+                }//Dong if
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một người bên dưới để xóa!");
+
+                }
+
+            }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+            }
+            else
+            {
+                FormUpdateNguoiNhanCauAn frm = new FormUpdateNguoiNhanCauAn();
+
+                frm.idso = txt_idchubai.Text;
+                frm.Show();
+            }
+
         }
     }
 }
