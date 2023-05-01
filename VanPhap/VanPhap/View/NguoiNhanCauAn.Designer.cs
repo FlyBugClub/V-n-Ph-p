@@ -51,6 +51,7 @@
             this.txt_id = new System.Windows.Forms.TextBox();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_xacnhan = new System.Windows.Forms.Button();
+            this.txt_id_them = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txt_id_so
@@ -109,6 +110,7 @@
             this.rbm_Nam.Name = "rbm_Nam";
             this.rbm_Nam.Size = new System.Drawing.Size(79, 31);
             this.rbm_Nam.TabIndex = 22;
+            this.rbm_Nam.TabStop = true;
             this.rbm_Nam.Text = "Nam";
             this.rbm_Nam.UseVisualStyleBackColor = true;
             // 
@@ -157,7 +159,6 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(239, 35);
             this.txt_name.TabIndex = 1;
-            this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // txt_sao
             // 
@@ -309,11 +310,23 @@
             this.btn_xacnhan.UseVisualStyleBackColor = true;
             this.btn_xacnhan.Click += new System.EventHandler(this.btn_xacnhan_Click);
             // 
+            // txt_id_them
+            // 
+            this.txt_id_them.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id_them.Location = new System.Drawing.Point(468, 252);
+            this.txt_id_them.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_id_them.Name = "txt_id_them";
+            this.txt_id_them.Size = new System.Drawing.Size(269, 35);
+            this.txt_id_them.TabIndex = 36;
+            this.txt_id_them.TabStop = false;
+            this.txt_id_them.Visible = false;
+            // 
             // NguoiNhanCauAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 310);
+            this.Controls.Add(this.txt_id_them);
             this.Controls.Add(this.btn_xacnhan);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.btn_Add);
@@ -365,5 +378,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Button btn_xacnhan;
+        private System.Windows.Forms.TextBox txt_id_them;
     }
 }

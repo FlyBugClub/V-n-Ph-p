@@ -125,9 +125,9 @@ namespace VanPhap.View
                         // Tạo đối tượng Command và liên kết với Connection
                         using (OleDbCommand command = new OleDbCommand(query, connection))
 
-                        
-                         
-                         
+
+
+
                         {
                             // Gán giá trị cho các tham số trong câu lệnh INSERT
                             command.Parameters.AddWithValue("?", id);
@@ -135,6 +135,43 @@ namespace VanPhap.View
                             command.Parameters.AddWithValue("?", phapdanh);
                             command.Parameters.AddWithValue("?", diachi);
                             command.Parameters.AddWithValue("?", nguyenquan);
+
+
+                            // Thực thi câu lệnh INSERT
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            // Kiểm tra số dòng bị ảnh hưởng
+                            if (rowsAffected > 0)
+                            {
+
+                                MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
+
+                            }
+                        }
+
+
+
+
+                        // Tạo câu lệnh INSERT 
+                        string query2 = "INSERT INTO tblso (ID, IDChuBai)  VALUES (?,?)";
+
+
+
+                        // Tạo đối tượng Command và liên kết với Connection
+                        using (OleDbCommand command = new OleDbCommand(query2, connection))
+
+
+
+
+                        {
+                            // Gán giá trị cho các tham số trong câu lệnh INSERT
+                            command.Parameters.AddWithValue("?", id);
+                            command.Parameters.AddWithValue("?", id);
+
 
 
                             // Thực thi câu lệnh INSERT
@@ -163,4 +200,4 @@ namespace VanPhap.View
         }
 
     }
-    }
+}
