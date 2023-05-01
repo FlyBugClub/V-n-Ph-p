@@ -72,7 +72,7 @@
             this.Menu.Size = new System.Drawing.Size(1167, 25);
             this.Menu.TabIndex = 19;
             this.Menu.Text = "menuStrip1";
-            
+            this.Menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.Menu_ItemClicked);
             // 
             // thoátToolStripMenuItem
             // 
@@ -86,7 +86,7 @@
             this.thoátToolStripMenuItem.ShowShortcutKeys = false;
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(75, 21);
             this.thoátToolStripMenuItem.Text = "Tùy chọn";
-            
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // inSớToolStripMenuItem
             // 
@@ -286,7 +286,7 @@
             this.pnl_Component.Name = "pnl_Component";
             this.pnl_Component.Size = new System.Drawing.Size(963, 579);
             this.pnl_Component.TabIndex = 33;
-            
+            this.pnl_Component.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
             // form_manage
             // 

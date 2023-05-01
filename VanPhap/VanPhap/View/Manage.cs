@@ -29,7 +29,7 @@ namespace VanPhap
         {
             //List<ChiTietSo> humans = new VanPhapBUS().GetAll();
             //dgv_list.DataSource = humans;
-            
+            OpentChildForm(new View.SoCauAn(), sender);
             lbl_Title.Text = "SỚ CẦU AN";
             Btn_Color(btn_SoCauAn, null);
             this.MaximizeBox= true;
@@ -52,6 +52,62 @@ namespace VanPhap
         //    return 0;
         //}
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbm_Man_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabale_List_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void pnl_Form_Paint(object sender, PaintEventArgs e)
+        {
+         
+        }
+        
+        public void TinhTuoiSaoHan()
+        {
+
+        }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
@@ -78,21 +134,65 @@ namespace VanPhap
             //else { MessageBox.Show("Xin Lỗi Bạn!"); }
         }
 
+        private void txt_sao_TextChanged(object sender, EventArgs e)
+        {
 
-        private void OpentChildForm(Form SoCauAn   , object btnSender)
+        }
+
+        private void txt_birthday_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_han_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_luutru_RegionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_tuoi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_year_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void OpentChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
             {
                 activeForm.Close();
             }
-            activeForm = SoCauAn;
-            SoCauAn.TopLevel = false;
-            SoCauAn.FormBorderStyle = FormBorderStyle.None;
-            SoCauAn.Dock = DockStyle.Fill;
-            this.pnl_Component.Controls.Add(SoCauAn);
-            this.pnl_Component.Tag = SoCauAn;
-            SoCauAn.BringToFront();
-            SoCauAn.Show();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.pnl_Component.Controls.Add(childForm);
+            this.pnl_Component.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void btn_SoCauAn_Click(object sender, EventArgs e)
