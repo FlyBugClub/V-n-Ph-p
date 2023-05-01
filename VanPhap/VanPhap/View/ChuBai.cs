@@ -80,23 +80,17 @@ namespace VanPhap.View
                         string query1 = "SELECT MAX(ID) FROM tblphattu";
                         using (OleDbCommand command = new OleDbCommand(query1, connection))
                         {
-
-
-                            using (OleDbDataReader reader = command.ExecuteReader())
+                             using (OleDbDataReader reader = command.ExecuteReader())
                             {
                                 // Kiểm tra nếu có dữ liệu trả về
                                 if (reader.HasRows)
                                 {
                                     while (reader.Read())
                                     {
-
                                         double value1 = reader.GetDouble(0);  // Lấy giá trị của cột Column1
 
                                         txt_id1.Text = value1.ToString();
-
                                     }
-
-
                                 }
                                 else
                                 {
@@ -105,8 +99,6 @@ namespace VanPhap.View
                                 }
                             }
                         }
-
-
                         // Tạo câu lệnh INSERT
                         string query = "INSERT INTO tblPhatTu (ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni)  VALUES (?,?,?,?,?)";
                         double id = double.Parse(txt_id1.Text) + 1;
@@ -118,11 +110,7 @@ namespace VanPhap.View
                         double namsinh = double.Parse(txt_birthday1.Text);
 
                         // Tạo đối tượng Command và liên kết với Connection
-                        using (OleDbCommand command = new OleDbCommand(query, connection))
-
-                        
-                         
-                         
+                        using (OleDbCommand command = new OleDbCommand(query, connection))  
                         {
                             // Gán giá trị cho các tham số trong câu lệnh INSERT
                             command.Parameters.AddWithValue("?", id);
@@ -130,21 +118,36 @@ namespace VanPhap.View
                             command.Parameters.AddWithValue("?", phapdanh);
                             command.Parameters.AddWithValue("?", diachi);
                             command.Parameters.AddWithValue("?", nguyenquan);
-
-
                             // Thực thi câu lệnh INSERT
                             int rowsAffected = command.ExecuteNonQuery();
-
                             // Kiểm tra số dòng bị ảnh hưởng
                             if (rowsAffected > 0)
                             {
-
                                 MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
                             }
                             else
                             {
                                 MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
-
+                            }
+                        }
+                        string query2 = "INSERT INTO tblSo (ID, IDChuBai)  VALUES (?,?)";
+                        double idd = double.Parse(txt_id1.Text);
+                        // Tạo đối tượng Command và liên kết với Connection
+                        using (OleDbCommand command = new OleDbCommand(query2, connection))
+                        {
+                            // Gán giá trị cho các tham số trong câu lệnh INSERT
+                            command.Parameters.AddWithValue("?", idd);
+                            command.Parameters.AddWithValue("?", idd);
+                            // Thực thi câu lệnh INSERT
+                            int rowsAffected = command.ExecuteNonQuery();
+                            // Kiểm tra số dòng bị ảnh hưởng
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
                             }
                         }
                     }
