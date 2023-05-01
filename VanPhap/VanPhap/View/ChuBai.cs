@@ -48,11 +48,6 @@ namespace VanPhap.View
 
         }
 
-        private void txt_birthday_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void lbl_nguyen_quan_Click(object sender, EventArgs e)
         {
 
@@ -199,5 +194,14 @@ namespace VanPhap.View
           
         }
 
+        private void txt_birthday1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_Form_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

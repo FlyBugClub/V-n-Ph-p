@@ -219,7 +219,7 @@ namespace VanPhap.View
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void rdbtn_chua_CheckedChanged(object sender, EventArgs e)
@@ -326,6 +326,21 @@ namespace VanPhap.View
                 frm.idso = txt_idchubai.Text;
                 frm.Show();
             }
+
+        }
+
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_diachi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_List_Click(object sender, EventArgs e)
+        {
 
         }
     }
