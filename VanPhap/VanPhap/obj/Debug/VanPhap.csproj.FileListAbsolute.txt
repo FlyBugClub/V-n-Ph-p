@@ -55,3 +55,5 @@ C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.View.NguoiNhanCauAn.resources
 C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.View.TimChuBai.resources
 C:\Git\V-n-Ph-p\VanPhap\VanPhap\bin\Debug\Demo.mdb
 C:\Git\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateNguoiNhanCauAn.resources
+E:\Projects\Vân Pháp\VanPhap\VanPhap\bin\Debug\Demo.mdb
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateNguoiNhanCauAn.resources

@@ -190,7 +190,6 @@ namespace VanPhap
             this.pnl_Component.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            
         }
 
         private void btn_SoCauAn_Click(object sender, EventArgs e)

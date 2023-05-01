@@ -15,6 +15,8 @@ namespace VanPhap.View
 {
     public partial class TimChuBai : Form
     {
+        private Form activeForm;
+
         string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\V-n-Ph-p\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
@@ -205,6 +207,20 @@ namespace VanPhap.View
 
         }
 
+        //private void OpentChildForm(Form childForm, object btnSender)
+        //{
+        //    if (activeForm != null)
+        //    {
+        //        activeForm.Close();
+        //    }
+        //    activeForm = childForm;
+        //    childForm.TopLevel = false;
+        //    childForm.FormBorderStyle = FormBorderStyle.None;
+        //    childForm.Dock = DockStyle.Fill;
+        //    childForm.BringToFront();
+        //    childForm.Show();
+        //}
+
         private void lsv_timchubai_ItemActivate(object sender, EventArgs e)
         {
             if (lsv_timchubai.SelectedItems.Count > 0)
@@ -225,6 +241,7 @@ namespace VanPhap.View
                 form2.phapdanh = phapdanh;
                 form2.diachi = diachi;
                 form2.nguyenquan = nguyenquan;
+                //OpentChildForm(new View.SoCauAn(), null);
 
 
 
