@@ -32,7 +32,10 @@ namespace VanPhap
             OpentChildForm(new View.SoCauAn(), sender);
             lbl_Title.Text = "SỚ CẦU AN";
             Btn_Color(btn_SoCauAn, null);
-            this.MaximizeBox= false;
+            this.MaximizeBox= true;
+            //FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+
         }
 
         //public int CheckGioiTinh(object sender, EventArgs e)
@@ -253,6 +256,11 @@ namespace VanPhap
         {
             ChangePassword tk = new ChangePassword();
             tk.Show();
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
         }
     } 
 }
