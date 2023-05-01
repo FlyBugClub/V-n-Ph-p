@@ -70,87 +70,96 @@ namespace VanPhap.View
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            using (OleDbConnection connection = new OleDbConnection(strCon))
+            if (txt_name.Text.Equals("")&& txt_birthday1.Text.Equals(""))
             {
-                try
+                MessageBox.Show("Chủ bái hoặc năm sinh không được để trống!");
+            }
+            else
+            {
+                using (OleDbConnection connection = new OleDbConnection(strCon))
                 {
-                    // Mở kết nối
-                    connection.Open();
-                    string query1 = "SELECT MAX(ID) FROM tblphattu";
-                    using (OleDbCommand command = new OleDbCommand(query1, connection))
+                    try
                     {
-
-
-                        using (OleDbDataReader reader = command.ExecuteReader())
+                        // Mở kết nối
+                        connection.Open();
+                        string query1 = "SELECT MAX(ID) FROM tblphattu";
+                        using (OleDbCommand command = new OleDbCommand(query1, connection))
                         {
-                            // Kiểm tra nếu có dữ liệu trả về
-                            if (reader.HasRows)
+
+
+                            using (OleDbDataReader reader = command.ExecuteReader())
                             {
-                                while (reader.Read())
+                                // Kiểm tra nếu có dữ liệu trả về
+                                if (reader.HasRows)
                                 {
+                                    while (reader.Read())
+                                    {
 
-                                    double value1 = reader.GetDouble(0);  // Lấy giá trị của cột Column1
+                                        double value1 = reader.GetDouble(0);  // Lấy giá trị của cột Column1
 
-                                    txt_id1.Text = value1.ToString();
+                                        txt_id1.Text = value1.ToString();
+
+                                    }
+
 
                                 }
+                                else
+                                {
 
-
-                            }
-                            else
-                            {
-
-                                MessageBox.Show("Không có dữ liệu trả về từ câu truy vấn SELECT.");
+                                    MessageBox.Show("Không có dữ liệu trả về từ câu truy vấn SELECT.");
+                                }
                             }
                         }
-                    }
 
 
                         // Tạo câu lệnh INSERT
                         string query = "INSERT INTO tblPhatTu (ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni)  VALUES (?,?,?,?,?)";
-                    double id = double.Parse(txt_id1.Text) + 1;
-                    txt_id1.Text = id.ToString();
-                    // Tạo đối tượng Command và liên kết với Connection
-                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                        double id = double.Parse(txt_id1.Text) + 1;
+                        txt_id1.Text = id.ToString();
+                        string hoten = txt_name.Text;
+                        string phapdanh = txt_nickname.Text;
+                        string diachi = txt_luutru.Text;
+                        string nguyenquan = txt_nguyenquan.Text;
+                        double namsinh = double.Parse(txt_birthday1.Text);
 
-                        /*double id = double.Parse(txt_id1.Text+1) ;
-                         txt_id1.Text =id.ToString();
-                         string hoten = txt_name.Text;
-                         string phapdanh = txt_nickname.Text;
-                         string diachi = txt_luutru.Text;
-                         string nguyenquan = txt_nguyenquan.Text;
-                         double namsinh = double.Parse(txt_birthday1.Text);*/
+                        // Tạo đối tượng Command và liên kết với Connection
+                        using (OleDbCommand command = new OleDbCommand(query, connection))
+
                         
-                    {
-                        // Gán giá trị cho các tham số trong câu lệnh INSERT
-                        command.Parameters.AddWithValue("?", id);
-                        command.Parameters.AddWithValue("?", "Test");
-                        command.Parameters.AddWithValue("?", "test");
-                        command.Parameters.AddWithValue("?", "Test");
-                        command.Parameters.AddWithValue("?", "Test");
-                        
-
-                        // Thực thi câu lệnh INSERT
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        // Kiểm tra số dòng bị ảnh hưởng
-                        if (rowsAffected > 0)
+                         
+                         
                         {
+                            // Gán giá trị cho các tham số trong câu lệnh INSERT
+                            command.Parameters.AddWithValue("?", id);
+                            command.Parameters.AddWithValue("?", hoten);
+                            command.Parameters.AddWithValue("?", phapdanh);
+                            command.Parameters.AddWithValue("?", diachi);
+                            command.Parameters.AddWithValue("?", nguyenquan);
 
-                            MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
 
+                            // Thực thi câu lệnh INSERT
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            // Kiểm tra số dòng bị ảnh hưởng
+                            if (rowsAffected > 0)
+                            {
+
+                                MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
+
+                            }
                         }
                     }
-                }
-                catch (OleDbException ex)
-                {
-                    MessageBox.Show("Lỗi khi thêm dữ liệu vào cơ sở dữ liệu: " + ex.Message);
+                    catch (OleDbException ex)
+                    {
+                        MessageBox.Show("Lỗi khi thêm dữ liệu vào cơ sở dữ liệu: " + ex.Message);
+                    }
                 }
             }
+          
         }
 
     }

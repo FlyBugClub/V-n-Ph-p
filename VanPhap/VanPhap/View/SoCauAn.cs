@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VanPhap.Controller;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ListView = System.Windows.Forms.ListView;
 
 namespace VanPhap.View
 {
@@ -32,7 +33,7 @@ namespace VanPhap.View
         }
         public void CloseConection()
         {
-            if(sqlCon.State == ConnectionState.Open && sqlCon != null)
+            if (sqlCon.State == ConnectionState.Open && sqlCon != null)
             {
                 sqlCon.Close();
             }
@@ -46,93 +47,76 @@ namespace VanPhap.View
         public SoCauAn()
         {
             InitializeComponent();
+            myListView = lsv_danhsach_cauan;
         }
 
+        
+        public ListView myListView;
+        
         private void SoCauAn_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
+            lsv_danhsach_cauan.Items.Clear();
+            HienDanhSach();
+            
+            
+        }
+        public void HienDanhSach()
+        {
+            lsv_danhsach_cauan.Items.Clear();
+
             txt_idchubai.Text = id;
             txt_name.Text = chubai;
             txt_nickname.Text = phapdanh;
             txt_diachi.Text = diachi;
             txt_luutru.Text = nguyenquan;
 
+            string idso = txt_idchubai.Text;
+            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso";
+            //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
 
 
-            
-
-        }
-        public void HienDanhSachVatTu()
-        {
-            /*using (OleDbConnection connection = new OleDbConnection(strCon))
+            using (OleDbConnection connection = new OleDbConnection(strCon))
             {
+                OleDbCommand command = new OleDbCommand(query, connection);
+                command.Parameters.AddWithValue("@idso", idso); // Truyền giá trị vào tham số @param
                 connection.Open();
 
-                // Thực hiện truy vấn SQL để lấy dữ liệu từ bảng
-                string sqlQuery = "SELECT * FROM tblChiTietSo";
-                using (OleDbCommand command = new OleDbCommand(sqlQuery, connection))
+                using (OleDbDataReader reader = command.ExecuteReader())
                 {
-                    // Thực hiện truy vấn và nhận dữ liệu bằng OleDbDataReader
-                    using (OleDbDataReader reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            // Lấy giá trị của cột "shortTextField"
-                            string shortText = reader.GetString(10);
+                        /*string hoten = reader.GetString(0);
+                        string phapdanh1 = reader.GetString(1);
+                        double gioitinh = reader.GetDouble(2);
+                        double namsinh = reader.GetDouble(3);
+                        string amlich = reader.GetString(4);
+                        string sao = reader.GetString(5);
+                        string han = reader.GetString(6);*/
 
-                            // Sử dụng giá trị shortText theo nhu cầu của bạn
-                            ListViewItem lvi = new ListViewItem(shortText);
-                            
-                            lsv_danhsach_cauan.Items.Add(lvi);
+                        ListViewItem lvi = new ListViewItem(reader["HoTenUni"].ToString());
+                        
+                        
+                        lvi.SubItems.Add(reader["PhapDanhUni"].ToString());
+                        lvi.SubItems.Add(reader["NamNu"].ToString());
+                        lvi.SubItems.Add(reader["NamSinh"].ToString());
+                        lvi.SubItems.Add(reader["AmLich"].ToString());
+                        lvi.SubItems.Add(reader["Sao"].ToString());
+                        lvi.SubItems.Add(reader["Han"].ToString());
+                        lvi.SubItems.Add(reader["ID"].ToString());
+                        lvi.SubItems.Add(reader["IDSo"].ToString());
 
-                        }
+
+                        lsv_danhsach_cauan.Items.Add(lvi);
                     }
+
+
                 }
-            }*/
-            OpenConection();
-
-
-
-            OleDbCommand sqlCmd = new OleDbCommand();
-            sqlCmd.CommandType = System.Data.CommandType.Text;
-            sqlCmd.CommandText = "SELECT TOP 5 ID FROM tblphattu ORDER BY ID DESC";
-            sqlCmd.Connection = sqlCon;
-
-            OleDbDataReader reader = sqlCmd.ExecuteReader();
-
-            
-
-            while (reader.Read())
-            {
-
-                //*double idSo = reader.GetDouble(1);*//*
-                double hoten = reader.GetDouble(0);
-                /*string phapdanh = reader.GetString(11);
-                double gioitinh = reader.GetDouble(4);
-                double namsinh = reader.GetDouble(6);
-               // string tuoiam = reader.GetString(7);
-                string sao = reader.GetString(8);
-                string han = reader.GetString(9);*/
-
-
-
-
-                ListViewItem lvi = new ListViewItem(hoten.ToString());
-                /*lvi.SubItems.Add(hoten);
-                lvi.SubItems.Add(phapdanh);
-                lvi.SubItems.Add(gioitinh.ToString());
-                lvi.SubItems.Add(namsinh.ToString());
-                //lvi.SubItems.Add(tuoiam);
-                lvi.SubItems.Add(sao);
-                lvi.SubItems.Add(han);*/
-                
-
-                lsv_danhsach_cauan.Items.Add(lvi);
-
             }
         }
 
-            public void CheckGioiTinh()
+
+        public void CheckGioiTinh()
         {
             if (rbm_Man.Checked)
             {
@@ -146,46 +130,31 @@ namespace VanPhap.View
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            NguoiNhanCauAn nnca = new NguoiNhanCauAn();
-            nnca.Show();
 
-            //Hiển thị thông tin từ item vào TextBox
-            string id = txt_idchubai.Text;
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+                
+            }
+            else
+            {
+                //Hiển thị thông tin từ item vào TextBox
+                string id = txt_idchubai.Text;
+
+
+                NguoiNhanCauAn formNguoiNhan = new NguoiNhanCauAn();
+                formNguoiNhan.DataFromForm11 = id;
+                formNguoiNhan.Show();
+            }
             
 
-            NguoiNhanCauAn formNguoiNhan = new NguoiNhanCauAn();
-            formNguoiNhan.DataFromForm1 = id;
-
 
         }
 
-    
+
+
 
         
-        private void dgv_list_SelectionChanged(object sender, EventArgs e)
-        {
-            //if (dgv_list.SelectedRows.Count > 0)
-            //{
-            //    int id = int.Parse(dgv_list.SelectedRows[0].Cells["IDSo"].Value.ToString());
-            //    ChiTietSo human = new VanPhapBUS().GetDetails(id);
-            //    if (human != null)
-            //    {
-            //        txt_name.Text = human.HoTen;
-            //        txt_nickname.Text = human.PhapDanh;
-            //        txt_birthday.Text = human.IDNamSinh.ToString();
-            //        txt_gioi_tinh.Text = human.GioiTinh.ToString();
-            //        if (txt_gioi_tinh.Text.Equals("Nam"))
-            //        {
-            //            rbm_Man.Checked = true;
-            //        } else if (txt_gioi_tinh.Text.Equals("Nữ"))
-            //        {
-            //            rbm_Woman.Checked = true;
-            //        }
-                    
-            //    }
-
-            //}
-        }
 
         //public void clear()
         //{
@@ -222,7 +191,7 @@ namespace VanPhap.View
 
         private void btn_Add_MouseLeave(object sender, EventArgs e)
         {
-            btn_Add.ForeColor =   Color.Black;
+            btn_Add.ForeColor = Color.Black;
         }
 
         private void radioButton4_Click(object sender, EventArgs e)
@@ -275,6 +244,88 @@ namespace VanPhap.View
 
         private void txt_luutru_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+            }
+            else
+            {
+                lsv_danhsach_cauan.Items.Clear();
+                HienDanhSach();
+            }
+            
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+
+            }
+            else
+            {
+                if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+                {
+                    // Lấy giá trị khóa chính từ dòng đang chọn
+
+                    string id = lsv_danhsach_cauan.SelectedItems[0].SubItems[7].Text; // Giả sử khóa chính ở cột đầu tiên
+                    string idso = lsv_danhsach_cauan.SelectedItems[0].SubItems[8].Text;
+
+                    using (OleDbConnection connection = new OleDbConnection(strCon))
+                    {
+                        connection.Open();
+
+
+                        // Thực hiện câu lệnh DELETE
+                        string query = "DELETE FROM tblchitietso WHERE id = @id AND idso = @idso";
+
+                        using (OleDbCommand command = new OleDbCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@id", id);
+                            command.Parameters.AddWithValue("@idso", idso);
+                            command.ExecuteNonQuery();
+                        }
+                        if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+                        {
+                            // Xóa thành công
+                            MessageBox.Show("Xóa thành công");
+                            HienDanhSach();
+                        }
+                        else
+                        {
+                            // Không có dòng nào được xóa
+                            MessageBox.Show("Không có dòng nào được xóa");
+                        }
+                    }
+                }//Dong if
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một người bên dưới để xóa!");
+
+                }
+
+            }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+            }
+            else
+            {
+                FormUpdateNguoiNhanCauAn frm = new FormUpdateNguoiNhanCauAn();
+
+                frm.idso = txt_idchubai.Text;
+                frm.Show();
+            }
 
         }
     }

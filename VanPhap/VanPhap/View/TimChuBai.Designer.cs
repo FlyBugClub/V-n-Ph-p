@@ -43,6 +43,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dgv_list = new System.Windows.Forms.DataGridView();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -50,8 +51,8 @@
             this.btn_tim_kiem = new System.Windows.Forms.Button();
             this.btn_huy_bo = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_xem = new System.Windows.Forms.Button();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txt_id_chu_bai = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_Form.SuspendLayout();
             this.pnl_List.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             this.pnl_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_Form.Controls.Add(this.label1);
             this.pnl_Form.Controls.Add(this.txt_diachi);
             this.pnl_Form.Controls.Add(this.lbl_LuuTru);
             this.pnl_Form.Controls.Add(this.txt_nguyenquan);
@@ -83,7 +85,7 @@
             this.txt_diachi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(241, 35);
-            this.txt_diachi.TabIndex = 28;
+            this.txt_diachi.TabIndex = 3;
             // 
             // lbl_LuuTru
             // 
@@ -104,7 +106,7 @@
             this.txt_nguyenquan.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nguyenquan.Name = "txt_nguyenquan";
             this.txt_nguyenquan.Size = new System.Drawing.Size(241, 35);
-            this.txt_nguyenquan.TabIndex = 27;
+            this.txt_nguyenquan.TabIndex = 4;
             // 
             // lbl_name
             // 
@@ -126,20 +128,14 @@
             this.txt_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(239, 35);
-            this.txt_name.TabIndex = 3;
+            this.txt_name.TabIndex = 1;
             // 
             // lbl_Birthday
             // 
-            this.lbl_Birthday.AutoSize = true;
-            this.lbl_Birthday.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Birthday.Location = new System.Drawing.Point(471, 26);
-            this.lbl_Birthday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Birthday.Location = new System.Drawing.Point(0, 0);
             this.lbl_Birthday.Name = "lbl_Birthday";
-            this.lbl_Birthday.Size = new System.Drawing.Size(81, 27);
-            this.lbl_Birthday.TabIndex = 12;
-            this.lbl_Birthday.Text = "Địa chỉ";
-            this.lbl_Birthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_Birthday.Click += new System.EventHandler(this.lbl_Birthday_Click);
+            this.lbl_Birthday.Size = new System.Drawing.Size(100, 23);
+            this.lbl_Birthday.TabIndex = 27;
             // 
             // lbl_NickName
             // 
@@ -149,7 +145,7 @@
             this.lbl_NickName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_NickName.Name = "lbl_NickName";
             this.lbl_NickName.Size = new System.Drawing.Size(114, 27);
-            this.lbl_NickName.TabIndex = 9;
+            this.lbl_NickName.TabIndex = 28;
             this.lbl_NickName.Text = "Pháp danh";
             this.lbl_NickName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -160,7 +156,7 @@
             this.txt_nickname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(241, 35);
-            this.txt_nickname.TabIndex = 10;
+            this.txt_nickname.TabIndex = 2;
             // 
             // pnl_List
             // 
@@ -177,7 +173,7 @@
             this.pnl_List.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_List.Name = "pnl_List";
             this.pnl_List.Size = new System.Drawing.Size(905, 259);
-            this.pnl_List.TabIndex = 39;
+            this.pnl_List.TabIndex = 30;
             // 
             // lsv_timchubai
             // 
@@ -194,7 +190,7 @@
             this.lsv_timchubai.Location = new System.Drawing.Point(0, 0);
             this.lsv_timchubai.Name = "lsv_timchubai";
             this.lsv_timchubai.Size = new System.Drawing.Size(901, 255);
-            this.lsv_timchubai.TabIndex = 22;
+            this.lsv_timchubai.TabIndex = 0;
             this.lsv_timchubai.UseCompatibleStateImageBehavior = false;
             this.lsv_timchubai.View = System.Windows.Forms.View.Details;
             this.lsv_timchubai.ItemActivate += new System.EventHandler(this.lsv_timchubai_ItemActivate);
@@ -220,6 +216,11 @@
             this.columnHeader4.Text = "Địa chỉ";
             this.columnHeader4.Width = 328;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Nguyên quán";
+            this.columnHeader5.Width = 153;
+            // 
             // dgv_list
             // 
             this.dgv_list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -233,7 +234,7 @@
             this.dgv_list.Name = "dgv_list";
             this.dgv_list.RowHeadersWidth = 51;
             this.dgv_list.Size = new System.Drawing.Size(907, 260);
-            this.dgv_list.TabIndex = 21;
+            this.dgv_list.TabIndex = 1;
             // 
             // btn_Update
             // 
@@ -287,7 +288,7 @@
             this.btn_tim_kiem.Margin = new System.Windows.Forms.Padding(0);
             this.btn_tim_kiem.Name = "btn_tim_kiem";
             this.btn_tim_kiem.Size = new System.Drawing.Size(156, 42);
-            this.btn_tim_kiem.TabIndex = 40;
+            this.btn_tim_kiem.TabIndex = 5;
             this.btn_tim_kiem.Text = "Tìm kiếm";
             this.btn_tim_kiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_tim_kiem.UseVisualStyleBackColor = true;
@@ -302,7 +303,7 @@
             this.btn_huy_bo.Margin = new System.Windows.Forms.Padding(0);
             this.btn_huy_bo.Name = "btn_huy_bo";
             this.btn_huy_bo.Size = new System.Drawing.Size(156, 42);
-            this.btn_huy_bo.TabIndex = 41;
+            this.btn_huy_bo.TabIndex = 7;
             this.btn_huy_bo.Text = "Hủy bỏ";
             this.btn_huy_bo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_huy_bo.UseVisualStyleBackColor = true;
@@ -317,37 +318,40 @@
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(0);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(156, 42);
-            this.btn_xoa.TabIndex = 42;
+            this.btn_xoa.TabIndex = 6;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xoa.UseVisualStyleBackColor = true;
             this.btn_xoa.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btn_xem
+            // txt_id_chu_bai
             // 
-            this.btn_xem.FlatAppearance.BorderSize = 0;
-            this.btn_xem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xem.ImageKey = "add-icon.png";
-            this.btn_xem.Location = new System.Drawing.Point(301, 153);
-            this.btn_xem.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_xem.Name = "btn_xem";
-            this.btn_xem.Size = new System.Drawing.Size(156, 42);
-            this.btn_xem.TabIndex = 43;
-            this.btn_xem.Text = "Thêm";
-            this.btn_xem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_xem.UseVisualStyleBackColor = true;
+            this.txt_id_chu_bai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id_chu_bai.Location = new System.Drawing.Point(743, 122);
+            this.txt_id_chu_bai.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_id_chu_bai.Name = "txt_id_chu_bai";
+            this.txt_id_chu_bai.Size = new System.Drawing.Size(153, 35);
+            this.txt_id_chu_bai.TabIndex = 29;
+            this.txt_id_chu_bai.Visible = false;
             // 
-            // columnHeader5
+            // label1
             // 
-            this.columnHeader5.Text = "Nguyên quán";
-            this.columnHeader5.Width = 153;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(476, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 27);
+            this.label1.TabIndex = 300;
+            this.label1.Text = "Địa chỉ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TimChuBai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 490);
-            this.Controls.Add(this.btn_xem);
+            this.Controls.Add(this.txt_id_chu_bai);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_huy_bo);
             this.Controls.Add(this.btn_tim_kiem);
@@ -362,6 +366,7 @@
             this.pnl_List.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -384,12 +389,13 @@
         private System.Windows.Forms.Button btn_tim_kiem;
         private System.Windows.Forms.Button btn_huy_bo;
         private System.Windows.Forms.Button btn_xoa;
-        private System.Windows.Forms.Button btn_xem;
         private System.Windows.Forms.ListView lsv_timchubai;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.TextBox txt_id_chu_bai;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -70,8 +70,8 @@
             // 
             this.txt_birthday1.Location = new System.Drawing.Point(652, 36);
             this.txt_birthday1.Name = "txt_birthday1";
-            this.txt_birthday1.Size = new System.Drawing.Size(241, 22);
-            this.txt_birthday1.TabIndex = 37;
+            this.txt_birthday1.Size = new System.Drawing.Size(242, 22);
+            this.txt_birthday1.TabIndex = 3;
             // 
             // lbl_LuuTru
             // 
@@ -93,7 +93,7 @@
             this.txt_luutru.Margin = new System.Windows.Forms.Padding(4);
             this.txt_luutru.Name = "txt_luutru";
             this.txt_luutru.Size = new System.Drawing.Size(241, 35);
-            this.txt_luutru.TabIndex = 27;
+            this.txt_luutru.TabIndex = 5;
             // 
             // rbm_Woman
             // 
@@ -141,7 +141,7 @@
             this.txt_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(239, 35);
-            this.txt_name.TabIndex = 3;
+            this.txt_name.TabIndex = 1;
             // 
             // lbl_sex
             // 
@@ -186,7 +186,7 @@
             this.txt_nickname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(241, 35);
-            this.txt_nickname.TabIndex = 10;
+            this.txt_nickname.TabIndex = 2;
             // 
             // lbl_nguyen_quan
             // 
@@ -208,7 +208,7 @@
             this.txt_nguyenquan.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nguyenquan.Name = "txt_nguyenquan";
             this.txt_nguyenquan.Size = new System.Drawing.Size(241, 35);
-            this.txt_nguyenquan.TabIndex = 34;
+            this.txt_nguyenquan.TabIndex = 4;
             // 
             // btn_Add
             // 
@@ -220,7 +220,7 @@
             this.btn_Add.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(156, 42);
-            this.btn_Add.TabIndex = 35;
+            this.btn_Add.TabIndex = 6;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Add.UseVisualStyleBackColor = true;
