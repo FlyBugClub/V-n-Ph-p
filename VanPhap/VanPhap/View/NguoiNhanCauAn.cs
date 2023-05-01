@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VanPhap.View
+namespace VanPhap
 {
     public partial class NguoiNhanCauAn : Form
     {
@@ -823,6 +823,11 @@ namespace VanPhap.View
 
 
             }
+        }
+
+        private void NguoiNhanCauAn_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
