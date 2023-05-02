@@ -332,14 +332,11 @@ namespace VanPhap.View
             if (txt_name.Text.Equals(""))
             {
                 MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
-
             }
-
             else
             {
-                string query1 = "select MAX(ID) from tblchitietso where idso = @Id ";
-
-                
+                // Kiểm tra coi có id chưa
+                string query1 = "select ID from tblchitietso where idso = @Id ";
                 using (OleDbConnection connection = new OleDbConnection(strCon))
                 {
                     OleDbCommand command = new OleDbCommand(query1, connection);
@@ -354,7 +351,7 @@ namespace VanPhap.View
                             double name = reader.GetDouble(0);
                             // Lấy giá trị của cột column1 (vị trí 0 trong kết quả trả về)
 
-                            if (name==null)
+                            if (name == null)
                             {
                                 txt_id_kiemtra.Text = "";
                             }
@@ -362,21 +359,15 @@ namespace VanPhap.View
                             {
                                 txt_id_kiemtra.Text = name.ToString();
                             }
-                            
+
                         }
                     }
                 }
+                //Kiểm tra nếu chưa có
                 string kiemtra = txt_id_kiemtra.Text;
                 if (kiemtra.Equals(""))
                 {
-                    if (txt_gioi_tinh_1.Text.Equals("Nam"))
-                    {
-                        txt_gioi_tinh_1.Text = "1";
-                    }
-                    else
-                    {
-                        txt_gioi_tinh_1.Text = "2";
-                    }
+
                     using (OleDbConnection connection = new OleDbConnection(strCon))
                     {
                         try
@@ -384,10 +375,17 @@ namespace VanPhap.View
                             // Mở kết nối
                             connection.Open();
                             // Tạo câu lệnh INSERT
-                            string query3 = "INSERT INTO tblChiTietSo ( ID, IDSo, NamNu, NamSinh, AmLich , Sao, Han , HoTenUni,  PhapDanhUni)  VALUES (?,?,?,?,?,?,?,?,?)";
-                            
-                            //double iddd = double.Parse(txt_id.Text);
+                            string query2 = "INSERT INTO tblChiTietSo ( ID, IDSo, NamNu, NamSinh, AmLich , Sao, Han , HoTenUni,  PhapDanhUni)  VALUES (?,?,?,?,?,?,?,?,?)";
 
+                            //double iddd = double.Parse(txt_id.Text);
+                            if (txt_gioi_tinh_1.Text.Equals("Nam"))
+                            {
+                                txt_gioi_tinh_1.Text = "1";
+                            }
+                            else
+                            {
+                                txt_gioi_tinh_1.Text = "2";
+                            }
                             double namnu = double.Parse(txt_gioi_tinh_1.Text);
                             double namsinh = double.Parse(txt_birthday.Text);
                             string amlich = txt_tuoi.Text;
@@ -396,7 +394,7 @@ namespace VanPhap.View
                             string hoten = txt_name.Text;
                             string phapdanh = txt_nickname.Text;
                             // Tạo đối tượng Command và liên kết với Connection
-                            using (OleDbCommand command = new OleDbCommand(query3, connection))
+                            using (OleDbCommand command = new OleDbCommand(query2, connection))
                             {
                                 // Gán giá trị cho các tham số trong câu lệnh INSERT
                                 command.Parameters.AddWithValue("?", 0);
@@ -428,65 +426,85 @@ namespace VanPhap.View
                         }
                     }
                 }
+                /// nếu có rồi
                 else
                 {
+                    string query3 = "select MAX(ID) from tblchitietso where idso = @Id ";
                     using (OleDbConnection connection = new OleDbConnection(strCon))
                     {
-                        try
-                        {
-                            // Mở kết nối
-                            connection.Open();
-                            // Tạo câu lệnh INSERT
-                            string query3 = "INSERT INTO tblChiTietSo ( ID, IDSo, NamNu, NamSinh, AmLich , Sao, Han , HoTenUni,  PhapDanhUni)  VALUES (?,?,?,?,?,?,?,?,?)";
-                            double id = double.Parse(txt_id.Text) + 1;
-                            //double iddd = double.Parse(txt_id.Text);
+                        OleDbCommand command = new OleDbCommand(query3, connection);
+                        command.Parameters.AddWithValue("@Id", iddd);
 
-                            double namnu = double.Parse(txt_gioi_tinh_1.Text);
-                            double namsinh = double.Parse(txt_birthday.Text);
-                            string amlich = txt_tuoi.Text;
-                            string sao = txt_sao.Text;
-                            string han = txt_han.Text;
-                            string hoten = txt_name.Text;
-                            string phapdanh = txt_nickname.Text;
-                            // Tạo đối tượng Command và liên kết với Connection
-                            using (OleDbCommand command = new OleDbCommand(query3, connection))
+                        connection.Open();
+
+                        using (OleDbDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
                             {
-                                // Gán giá trị cho các tham số trong câu lệnh INSERT
-                                command.Parameters.AddWithValue("?", id);
-                                command.Parameters.AddWithValue("?", iddd);
-                                command.Parameters.AddWithValue("?", namnu);
-                                command.Parameters.AddWithValue("?", namsinh);
-                                command.Parameters.AddWithValue("?", amlich);
-                                command.Parameters.AddWithValue("?", sao);
-                                command.Parameters.AddWithValue("?", han);
-                                command.Parameters.AddWithValue("?", hoten);
-                                command.Parameters.AddWithValue("?", phapdanh);
-                                // Thực thi câu lệnh INSERT
-                                int rowsAffected = command.ExecuteNonQuery();
-                                // Kiểm tra số dòng bị ảnh hưởng
-                                if (rowsAffected > 0)
-                                {
-                                    MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
-                                    // Sử dụng listView để thao tác với ListView
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
-                                }
+                                double name = reader.GetDouble(0);
+                                txt_id.Text = name.ToString();
                             }
                         }
-                        catch (OleDbException ex)
-                        {
-                            MessageBox.Show("Lỗi khi thêm dữ liệu vào cơ sở dữ liệu: " + ex.Message);
-                        }
                     }
+                    
 
+                    //double iddd = double.Parse(txt_id.Text);
+                    if (txt_gioi_tinh_1.Text.Equals("Nam"))
+                    {
+                        txt_gioi_tinh_1.Text = "1";
+                    }
+                    else
+                    {
+                        txt_gioi_tinh_1.Text = "2";
+                    }
+                    string idso = txt_id_so.Text;
+                    double id = double.Parse(txt_id.Text)+1;
+                    double namnu = double.Parse(txt_gioi_tinh_1.Text);
+                    double namsinh = double.Parse(txt_birthday.Text);
+                    string amlich = txt_tuoi.Text;
+                    string sao = txt_sao.Text;
+                    string han = txt_han.Text;
+                    string hoten = txt_name.Text;
+                    string phapdanh = txt_nickname.Text;
+                    // Tạo đối tượng Command và liên kết với Connection
+                    string query4 = "INSERT INTO tblChiTietSo (ID,IDSo, NamNu, AmLich , Sao, Han , HoTenUni,  PhapDanhUni)   VALUES (?,?,?,?,?,?,?,?) ";
+                    using (OleDbConnection connection = new OleDbConnection(strCon))
+                    {
+                        using (OleDbCommand command = new OleDbCommand(query4, connection))
+                        {
+
+                            connection.Open();
+                            // Gán giá trị cho các tham số trong câu lệnh INSERT
+
+                            command.Parameters.AddWithValue("?", id);
+                            command.Parameters.AddWithValue("?", idso);
+                            command.Parameters.AddWithValue("?", namnu);
+                            command.Parameters.AddWithValue("?", amlich);
+                            command.Parameters.AddWithValue("?", sao);
+                            command.Parameters.AddWithValue("?", han);
+                            command.Parameters.AddWithValue("?", hoten);
+                            command.Parameters.AddWithValue("?", phapdanh);
+                            
+                            // Thực thi câu lệnh INSERT
+                            int rowsAffected = command.ExecuteNonQuery();
+                            // Kiểm tra số dòng bị ảnh hưởng
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
+                                // Sử dụng listView để thao tác với ListView
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
+                            }
+                        }
+                    }           
                 }
-                
             }
         }
     
 
+        /////////////////////////
         private void txt_name_TextChanged(object sender, EventArgs e)
         {
 

@@ -107,7 +107,7 @@ namespace VanPhap.View
                         string phapdanh = txt_nickname.Text;
                         string diachi = txt_luutru.Text;
                         string nguyenquan = txt_nguyenquan.Text;
-                        double namsinh = double.Parse(txt_birthday1.Text);
+                        //double namsinh = double.Parse(txt_birthday1.Text);
 
                         // Tạo đối tượng Command và liên kết với Connection
                         using (OleDbCommand command = new OleDbCommand(query, connection))  
