@@ -17,7 +17,7 @@ namespace VanPhap.View
     {
         private Form activeForm;
 
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\V-n-Ph-p\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Github\\V-n-Ph-p - Copy\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -235,18 +235,29 @@ namespace VanPhap.View
                 string diachi = activatedItem.SubItems[3].Text;
                 string nguyenquan = activatedItem.SubItems[4].Text;
 
-                SoCauAn form2 = new SoCauAn();
+                /*SoCauAn form2 = new SoCauAn();
                 form2.id = id;
                 form2.chubai = chubai;
                 form2.phapdanh = phapdanh;
                 form2.diachi = diachi;
-                form2.nguyenquan = nguyenquan;
+                form2.nguyenquan = nguyenquan;*/
                 //OpentChildForm(new View.SoCauAn(), null);
+                SoCauAn form2 = Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
+                if (form2 != null)
+                {
+                    form2.id = id;
+                    form2.chubai = chubai;
+                    form2.phapdanh = phapdanh;
+                    form2.diachi = diachi;
+                    form2.nguyenquan = nguyenquan;
+                    form2.UpdateData("Cuong");
+                    this.Close();
+                }
 
 
 
                 // Hiển thị Form 2
-                form2.Show();
+                /*form2.Show();*/
             }
         }
 

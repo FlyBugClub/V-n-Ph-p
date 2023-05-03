@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentFormat.OpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +19,7 @@ namespace VanPhap.View
 {
     public partial class SoCauAn : Form
     {
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\V-n-Ph-p\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Github\\V-n-Ph-p - Copy\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -61,6 +64,12 @@ namespace VanPhap.View
             
             
         }
+
+        public void UpdateData(string data)
+        {
+            lsv_danhsach_cauan.Items.Clear();
+            HienDanhSach();
+        }
         public void HienDanhSach()
         {
             lsv_danhsach_cauan.Items.Clear();
@@ -94,9 +103,9 @@ namespace VanPhap.View
                         string sao = reader.GetString(5);
                         string han = reader.GetString(6);*/
 
-                        ListViewItem lvi = new ListViewItem(reader["HoTenUni"].ToString());
-                        
-                        
+                        ListViewItem lvi = new ListViewItem();
+
+                        lvi.SubItems.Add(reader["HoTenUni"].ToString());
                         lvi.SubItems.Add(reader["PhapDanhUni"].ToString());
                         lvi.SubItems.Add(reader["NamNu"].ToString());
                         lvi.SubItems.Add(reader["NamSinh"].ToString());
@@ -186,12 +195,12 @@ namespace VanPhap.View
 
         private void btn_Add_MouseHover(object sender, EventArgs e)
         {
-            btn_Add.ForeColor = Color.Red;
+            btn_Add.ForeColor = System.Drawing.Color.Red;
         }
 
         private void btn_Add_MouseLeave(object sender, EventArgs e)
         {
-            btn_Add.ForeColor = Color.Black;
+            btn_Add.ForeColor = System.Drawing.Color.Black;
         }
 
         private void radioButton4_Click(object sender, EventArgs e)
@@ -341,6 +350,86 @@ namespace VanPhap.View
 
         private void lbl_List_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+                List<string> user = new List<string>();
+                List<List<string>> ls = new List<List<string>>();
+                int count = 0;
+
+                /*  lsv_danhsach_cauan.SelectedIndexChanged += lsv_danhsach_cauan_SelectedIndexChanged;
+                  if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+                  {
+                      // Xử lý lựa chọn dòng được chọn
+                      ListViewItem selectedItem = lsv_danhsach_cauan.SelectedItems[0];
+                      string name = selectedItem.SubItems[1].Text; // Lấy giá trị của cột
+                      txt_id.Text = name;
+                  }*/
+                foreach (ListViewItem item in lsv_danhsach_cauan.Items)
+                {
+                    if (item.Checked)
+                    {
+                        ls.Add(new List<string>());
+                    }
+
+                }
+                foreach (ListViewItem item in lsv_danhsach_cauan.Items)
+                {
+                    if (item.Checked)
+                    {
+                        ls[count].Add(item.SubItems[1].Text);
+                        ls[count].Add(item.SubItems[2].Text);
+                        ls[count].Add(item.SubItems[3].Text);
+                        ls[count].Add(item.SubItems[4].Text);
+                        ls[count].Add(item.SubItems[5].Text);
+                        ls[count].Add(item.SubItems[6].Text);
+                        ls[count].Add(item.SubItems[7].Text);
+
+                        count++;
+                    }
+                }
+                try
+                {
+                    string filePath = "D:/file.docx";
+                    using (WordprocessingDocument wordDocument = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document))
+                    {
+                        // Add a main document part
+                        MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
+                        // Create a new document tree
+
+                        mainPart.Document = new Document();
+                        // Create a body for the document
+
+                        DocumentFormat.OpenXml.Wordprocessing.Body body = new DocumentFormat.OpenXml.Wordprocessing.Body();
+
+                        // Add a paragraph to the body
+                        Paragraph paragraph = new Paragraph();
+                        Run run = new Run();
+
+                        foreach (List<string> sublist in ls)
+                        {
+                            foreach (string subitem in sublist)
+                            {
+                                run.Append(new Text(subitem + "\n"));
+                            }
+                            run.Append(new Break());
+                        }
+                        paragraph.Append(run);
+                        body.Append(paragraph);
+
+                        // Add the body to the document
+                        mainPart.Document.Append(body);
+                        
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+
+                }
+            
 
         }
     }
