@@ -467,7 +467,7 @@ namespace VanPhap.View
                     string hoten = txt_name.Text;
                     string phapdanh = txt_nickname.Text;
                     // Tạo đối tượng Command và liên kết với Connection
-                    string query4 = "INSERT INTO tblChiTietSo (ID,IDSo, NamNu, AmLich , Sao, Han , HoTenUni,  PhapDanhUni)   VALUES (?,?,?,?,?,?,?,?) ";
+                    string query4 = "INSERT INTO tblChiTietSo (ID,IDSo, NamNu, NamSinh,AmLich , Sao, Han , HoTenUni,  PhapDanhUni)   VALUES (?,?,?,?,?,?,?,?,?) ";
                     using (OleDbConnection connection = new OleDbConnection(strCon))
                     {
                         using (OleDbCommand command = new OleDbCommand(query4, connection))
@@ -479,6 +479,7 @@ namespace VanPhap.View
                             command.Parameters.AddWithValue("?", id);
                             command.Parameters.AddWithValue("?", idso);
                             command.Parameters.AddWithValue("?", namnu);
+                            command.Parameters.AddWithValue("?", namsinh);
                             command.Parameters.AddWithValue("?", amlich);
                             command.Parameters.AddWithValue("?", sao);
                             command.Parameters.AddWithValue("?", han);
