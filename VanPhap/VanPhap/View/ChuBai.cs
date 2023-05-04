@@ -65,9 +65,9 @@ namespace VanPhap.View
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            if (txt_name.Text.Equals("")&& txt_birthday1.Text.Equals(""))
+            if (txt_name.Text.Equals(""))
             {
-                MessageBox.Show("Chủ bái hoặc năm sinh không được để trống!");
+                MessageBox.Show("Chủ bái không được để trống!");
             }
             else
             {
@@ -121,15 +121,7 @@ namespace VanPhap.View
                             // Thực thi câu lệnh INSERT
                             int rowsAffected = command.ExecuteNonQuery();
                             // Kiểm tra số dòng bị ảnh hưởng
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Không thể thêm dữ liệu vào cơ sở dữ liệu.");
-                            }
-                        }
+                                                   }
                         string query2 = "INSERT INTO tblSo (ID, IDChuBai)  VALUES (?,?)";
                         double idd = double.Parse(txt_id1.Text);
                         // Tạo đối tượng Command và liên kết với Connection
