@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Policy;
 
+
 using VanPhap.View;
 
 
@@ -199,12 +200,13 @@ namespace VanPhap
         {
             OpentChildForm(new View.SoCauAn(), sender);
             lbl_Title.Text = "SỚ CẦU AN";
+           
             Btn_Color(btn_SoCauAn,null);
         }
 
         private void btn_SoCauSieu_Click(object sender, EventArgs e)
         {
-            OpentChildForm(new View.SoCauSieu(), sender);
+            OpentChildForm(new View.SoCauAn(), sender);
             lbl_Title.Text = "SỚ CẦU SIÊU";
             Btn_Color(btn_SoCauSieu, null);
         }
@@ -233,7 +235,9 @@ namespace VanPhap
 
         private void inSớToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+           
+
         }
 
         private void tìmToolStripMenuItem1_Click(object sender, EventArgs e)

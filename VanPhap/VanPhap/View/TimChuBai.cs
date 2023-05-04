@@ -17,7 +17,7 @@ namespace VanPhap.View
     {
         private Form activeForm;
 
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Github\\V-n-Ph-p - Copy\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\V-n-Ph-p\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -49,56 +49,88 @@ namespace VanPhap.View
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e)
         {
-            if (txt_name.Text.Equals(""))
+            if (txt_name.Text.Equals("1"))
             {
                 MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn một chủ bái bên dưới để xóa!");
 
             }
             else
             {
-                
-                if (lsv_timchubai.SelectedItems.Count > 0)
-                {
-                    // Lấy giá trị khóa chính từ dòng đang chọn
 
-                    string id = lsv_timchubai.SelectedItems[0].SubItems[0].Text; // Giả sử khóa chính ở cột đầu tiên
-                 
-                    using (OleDbConnection connection = new OleDbConnection(strCon))
+                DialogResult result = MessageBox.Show("Xóa hết dữ liệu chủ bái?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    if (lsv_timchubai.SelectedItems.Count > 0)
                     {
-                        connection.Open();
+                        // Lấy giá trị khóa chính từ dòng đang chọn
+
+                        string id = lsv_timchubai.SelectedItems[0].SubItems[0].Text; // Giả sử khóa chính ở cột đầu tiên
 
 
-                        // Thực hiện câu lệnh DELETE
-                        string query = "DELETE FROM tblphattu WHERE id = @id ";
-
-                        using (OleDbCommand command = new OleDbCommand(query, connection))
+                        using (OleDbConnection connection = new OleDbConnection(strCon))
                         {
-                            command.Parameters.AddWithValue("@id", id);
+                            connection.Open();
+
+                            string query1 = "DELETE FROM tblchitietso where idso = @id";
+                            using (OleDbCommand command = new OleDbCommand(query1, connection))
+                            {
+                                command.Parameters.AddWithValue("@id", id);
+
+                                command.ExecuteNonQuery();
+                            }
+
+                            string query = "DELETE FROM tblso WHERE id = @id ";
+
+                            using (OleDbCommand command = new OleDbCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@id", id);
+
+                                command.ExecuteNonQuery();
+                            }
+
+
+
+                            // Thực hiện câu lệnh DELETE
+                            string query2 = "DELETE FROM tblphattu WHERE id = @id ";
+
+                            using (OleDbCommand command = new OleDbCommand(query2, connection))
+                            {
+                                command.Parameters.AddWithValue("@id", id);
+
+                                command.ExecuteNonQuery();
+                            }
+                            if (lsv_timchubai.SelectedItems.Count > 0)
+                            {
+                                // Xóa thành công
+                                MessageBox.Show("Xóa thành công");
+                                HienDanhSach();
+
+                            }
+                            else
+                            {
+                                // Không có dòng nào được xóa
+                                MessageBox.Show("Không có dòng nào được xóa");
+                            }
                             
-                            command.ExecuteNonQuery();
                         }
-                        if (lsv_timchubai.SelectedItems.Count > 0)
-                        {
-                            // Xóa thành công
-                            MessageBox.Show("Xóa thành công");
-                            HienDanhSach();
-                            
-                        }
-                        else
-                        {
-                            // Không có dòng nào được xóa
-                            MessageBox.Show("Không có dòng nào được xóa");
-                        }
+                    }//Dong if
+                    else
+                    {
+                        MessageBox.Show("Vui lòng chọn một người bên dưới để xóa!");
+
                     }
-                }//Dong if
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn một người bên dưới để xóa!");
-
                 }
+                else if (result == DialogResult.No)
+                {
+                    
+                }
+
                 
+
+
             }
         }
 
@@ -128,7 +160,7 @@ namespace VanPhap.View
                 sqlCmd.CommandType = System.Data.CommandType.Text;
 
                 //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
-                sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%" + name + "%'  AND DiaChiUni LIKE '%" + diachi1 + "%' AND NguyenQuanUni LIKE '%" + nguyenquan1 + "%' AND PhapDanhUni LIKE '%" + phapdanh1 + "%' ";
+                sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%" + name + "%'  AND DiaChiUni LIKE '%" + diachi1 + "%' AND NguyenQuanUni LIKE '%" + nguyenquan1 + "%' AND PhapDanhUni LIKE '%" + phapdanh1 + "%'  ORDER BY ID DESC ";
                 sqlCmd.Connection = sqlCon;
 
                 OleDbDataReader reader = sqlCmd.ExecuteReader();
@@ -156,7 +188,7 @@ namespace VanPhap.View
         private void TimChuBai_Load(object sender, EventArgs e)
         {
         }
-        public void HienDanhSach()
+        public async void HienDanhSach()
         {
 
             {
@@ -179,7 +211,7 @@ namespace VanPhap.View
                     sqlCmd.CommandType = System.Data.CommandType.Text;
 
                     //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
-                    sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%" + name + "%'  AND DiaChiUni LIKE '%" + diachi1 + "%' AND NguyenQuanUni LIKE '%" + nguyenquan1 + "%' AND PhapDanhUni LIKE '%" + phapdanh1 + "%' ";
+                    sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%" + name + "%'  AND DiaChiUni LIKE '%" + diachi1 + "%' AND NguyenQuanUni LIKE '%" + nguyenquan1 + "%' AND PhapDanhUni LIKE '%" + phapdanh1 + "%'  ORDER BY ID DESC";
                     sqlCmd.Connection = sqlCon;
 
                     OleDbDataReader reader = sqlCmd.ExecuteReader();
@@ -274,6 +306,19 @@ namespace VanPhap.View
         private void btn_xem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_lammoi_Click(object sender, EventArgs e)
+        {
+            if (txt_name.Text.Equals(""))
+            {
+                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+            }
+            else
+            {
+                lsv_timchubai.Items.Clear();
+                HienDanhSach();
+            }
         }
     }
 }

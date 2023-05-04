@@ -34,6 +34,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnl_List = new System.Windows.Forms.Panel();
             this.lsv_danhsach_cauan = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,7 +68,6 @@
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_List.SuspendLayout();
             this.pnl_Form.SuspendLayout();
             this.SuspendLayout();
@@ -142,6 +142,11 @@
             this.lsv_danhsach_cauan.UseCompatibleStateImageBehavior = false;
             this.lsv_danhsach_cauan.View = System.Windows.Forms.View.Details;
             this.lsv_danhsach_cauan.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Check";
+            this.columnHeader10.Width = 101;
             // 
             // columnHeader1
             // 
@@ -256,6 +261,7 @@
             this.txt_nickname.Location = new System.Drawing.Point(224, 103);
             this.txt_nickname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nickname.Name = "txt_nickname";
+            this.txt_nickname.ReadOnly = true;
             this.txt_nickname.Size = new System.Drawing.Size(343, 46);
             this.txt_nickname.TabIndex = 2;
             this.txt_nickname.TextChanged += new System.EventHandler(this.txt_nickname_TextChanged);
@@ -306,6 +312,7 @@
             this.txt_name.Location = new System.Drawing.Point(224, 28);
             this.txt_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name.Name = "txt_name";
+            this.txt_name.ReadOnly = true;
             this.txt_name.Size = new System.Drawing.Size(343, 46);
             this.txt_name.TabIndex = 1;
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
@@ -359,6 +366,7 @@
             this.txt_luutru.Location = new System.Drawing.Point(861, 103);
             this.txt_luutru.Margin = new System.Windows.Forms.Padding(4);
             this.txt_luutru.Name = "txt_luutru";
+            this.txt_luutru.ReadOnly = true;
             this.txt_luutru.Size = new System.Drawing.Size(343, 46);
             this.txt_luutru.TabIndex = 4;
             this.txt_luutru.TextChanged += new System.EventHandler(this.txt_luutru_TextChanged);
@@ -383,6 +391,7 @@
             this.txt_diachi.Location = new System.Drawing.Point(861, 28);
             this.txt_diachi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_diachi.Name = "txt_diachi";
+            this.txt_diachi.ReadOnly = true;
             this.txt_diachi.Size = new System.Drawing.Size(343, 46);
             this.txt_diachi.TabIndex = 3;
             this.txt_diachi.TextChanged += new System.EventHandler(this.txt_diachi_TextChanged);
@@ -411,6 +420,7 @@
             this.txt_id.TabIndex = 30;
             this.txt_id.TabStop = false;
             this.txt_id.Text = " ";
+            this.txt_id.Visible = false;
             // 
             // txt_idchubai
             // 
@@ -421,6 +431,7 @@
             this.txt_idchubai.Name = "txt_idchubai";
             this.txt_idchubai.Size = new System.Drawing.Size(115, 46);
             this.txt_idchubai.TabIndex = 31;
+            this.txt_idchubai.Visible = false;
             // 
             // pnl_Form
             // 
@@ -539,11 +550,6 @@
             this.btn_print.UseVisualStyleBackColor = true;
             this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Check";
-            this.columnHeader10.Width = 101;
-            // 
             // SoCauAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -563,7 +569,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SoCauAn";
-            this.Text = "SoCauAn";
+            this.Text = "Sớ";
             this.Load += new System.EventHandler(this.SoCauAn_Load);
             this.pnl_List.ResumeLayout(false);
             this.pnl_Form.ResumeLayout(false);

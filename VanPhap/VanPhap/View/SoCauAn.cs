@@ -19,7 +19,7 @@ namespace VanPhap.View
 {
     public partial class SoCauAn : Form
     {
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Github\\V-n-Ph-p - Copy\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\V-n-Ph-p\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -46,6 +46,8 @@ namespace VanPhap.View
         public string phapdanh { get; set; }
         public string diachi { get; set; }
         public string nguyenquan { get; set; }
+
+        public string status { get; set; }
 
         public SoCauAn()
         {
@@ -353,7 +355,7 @@ namespace VanPhap.View
 
         }
 
-        private void btn_print_Click(object sender, EventArgs e)
+        public void btn_print_Click(object sender, EventArgs e)
         {
                 List<string> user = new List<string>();
                 List<List<string>> ls = new List<List<string>>();
