@@ -80,3 +80,6 @@ D:\Github\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CoreCompileInputs.ca
 D:\Github\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CopyComplete
 D:\Github\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.exe
 D:\Github\V-n-Ph-p\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
+E:\Projects\Vân Pháp\VanPhap\VanPhap\bin\Debug\DocumentFormat.OpenXml.dll
+E:\Projects\Vân Pháp\VanPhap\VanPhap\bin\Debug\DocumentFormat.OpenXml.xml
+E:\Projects\Vân Pháp\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CopyComplete
